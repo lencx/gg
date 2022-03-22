@@ -21,7 +21,8 @@
     "rgd": "rgd",
     "posts": "rgd --owner=lencx --repo=gatsby-github-template --mode=json,rss --jsonfmt=true --outdir=discussions",
     "reconf": "node ./scripts/reconf",
-    "reset": "node ./scripts/reset"
+    "reset": "node ./scripts/reset",
+    "copy": "node ./scripts/copy"
   },
   "dependencies": {
     "@iconify-icons/bxs": "^1.2.3",
