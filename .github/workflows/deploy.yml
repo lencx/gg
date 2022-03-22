@@ -18,6 +18,7 @@ jobs:
           node-version: '14'
       - run: yarn
       - run: yarn posts --token=${{ secrets.GH_TOKEN }}
+      - run: yarn reconf
       - run: yarn build
       - run: yarn copy
 
