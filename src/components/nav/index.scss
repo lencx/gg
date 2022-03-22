@@ -1,4 +1,4 @@
-.dev-nav {
+.gg-nav {
   height: var(--layout-header-height);
 
   * {
@@ -16,14 +16,14 @@
       list-style: none;
       align-items: center;
       font-weight: bold;
-      color: var(--icon);
+      color: var(--gg-icon);
       cursor: pointer;
     }
   }
 }
 
 @media screen and (max-width: 720px) {
-  .dev-nav {
+  .gg-nav {
     display: flex;
     align-items: center;
 

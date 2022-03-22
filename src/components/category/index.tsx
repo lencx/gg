@@ -11,7 +11,7 @@ interface CategoryProps {
 
 const Category: FC<CategoryProps> = ({ data }) => {
   return (
-    <Link className="category" to={`/category/${data.name}`}>
+    <Link className="gg-category" to={`/category/${data.name}`}>
       {getEmoji(data.emoji)} {data.name}
     </Link>
   );

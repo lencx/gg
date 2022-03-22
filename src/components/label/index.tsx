@@ -11,7 +11,7 @@ const Label: FC<LabelProps> = ({ data }) => {
   return (
     <Link
       key={data.name}
-      className="label"
+      className="gg-label"
       style={{ borderColor: `#${data.color}` }}
       to={`/labels/${data.name}`}
     >

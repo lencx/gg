@@ -11,7 +11,7 @@ const Logo: FC<LogoProps> = ({ color, onClick }) => {
   return (
     <span
       onClick={onClick}
-      className="dev-logo"
+      className="gg-logo"
       role="img"
       aria-label="dev"
       tabIndex={-1}

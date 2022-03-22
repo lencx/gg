@@ -31,11 +31,8 @@ const Nav: FC<NavProps> = ({ siteMetadata }) => {
   }, []);
 
   return (
-    <div className="dev-nav">
+    <div className="gg-nav">
       <NavIcon isActive={isToggle} onClick={handleToggle} />
-      {/* <span className="nav-icon" onClick={handleToggle}>
-        menu
-      </span> */}
       <NavScreen isHide={isToggle} siteMetadata={siteMetadata} />
     </div>
   );

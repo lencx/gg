@@ -16,7 +16,7 @@ const PrevNext: FC<PrevNextProps> = (props) => {
   const next = props.next;
 
   return (
-    <div className="issues-prev-next">
+    <div className="gg-issues-prev-next">
       {prev && (
         <Link className="prev" to={`/issues/${prev.number}`}>
           <span>

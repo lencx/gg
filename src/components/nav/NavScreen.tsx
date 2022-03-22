@@ -25,7 +25,7 @@ const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
               className="icon-action"
               icon={iconCategory}
               fontSize="20"
-              color="var(--icon)"
+              color="var(--gg-icon)"
             />
             Category
           </li>
@@ -34,7 +34,7 @@ const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
               className="icon-action"
               icon={iconTags}
               fontSize="20"
-              color="var(--icon)"
+              color="var(--gg-icon)"
             />
             Labels
           </li>
@@ -45,14 +45,14 @@ const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
             className="icon-action"
             icon={iconRss}
             fontSize="20"
-            color="var(--icon)"
+            color="var(--gg-icon)"
             onClick={() => go(siteMetadata.rss)}
           />
           <Icon
             className="icon-action"
             icon={iconGh}
             fontSize="20"
-            color="var(--icon)"
+            color="var(--gg-icon)"
             onClick={() => go(siteMetadata.repo)}
           />
         </div>

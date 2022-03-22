@@ -8,10 +8,10 @@
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 
-  --border: rgba(180, 180, 180, 0.1);
-
   --layout-header-height: 56px;
   --layout-footer-height: 56px;
+
+  --gg-border: rgba(180, 180, 180, 0.1);
 }
 
 * {
@@ -23,18 +23,18 @@ html.dark {
   --theme-content-background-color: #232629;
   --theme-header-background-color: #232629;
   --theme-footer-background-color: #232629;
-  --dev-logo: #d8d8d8;
-  --icon: #75757a;
   --theme-text: #d8d8d8;
+  --gg-logo: #d8d8d8;
+  --gg-icon: #75757a;
 }
 
 html.light {
   --theme-content-background-color: #ffffff;
   --theme-header-background-color: #fafafa;
   --theme-footer-background-color: #fefefe;
-  --dev-logo: #232629;
-  --icon: #a5a5ac;
   --theme-text: #232629;
+  --gg-logo: #232629;
+  --gg-icon: #a5a5ac;
 }
 
 body {

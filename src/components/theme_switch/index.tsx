@@ -25,11 +25,11 @@ const ThemeSwitch = () => {
 
   return (
     <Icon
-      className="dev-theme-toggle icon-action"
+      className="gg-theme-toggle icon-action"
       onClick={handleChange}
       icon={isDark ? iconMoon : iconSun}
       fontSize="20"
-      color="var(--icon)"
+      color="var(--gg-icon)"
     />
   );
 };

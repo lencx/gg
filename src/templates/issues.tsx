@@ -34,7 +34,7 @@ export default function BlogIssues(props: any) {
             <span>{data.title}</span>
           </span>
         </h1>
-        <div className="labels">
+        <div className="widget">
           <Category data={data.category} />
           {labels.map(({ node }: any) => {
             return <Label key={node.name} data={node} />;

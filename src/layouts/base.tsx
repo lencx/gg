@@ -21,15 +21,25 @@ export default function Layout(props: LayoutProps) {
           title
           owner
           description
+          userLogo
         }
       }
     }
   `);
 
   return (
-    <div className={clsx('dev-container', props.className)}>
+    <div className={clsx('gg-container', props.className)}>
       <header>
-        <Logo onClick={() => navigate('/')} color="var(--dev-logo)" />
+        {!data.site.siteMetadata.userLogo ? (
+          <Logo onClick={() => navigate('/')} color="var(--gg-logo)" />
+        ) : (
+          <img
+            className="imglogo"
+            src={require('../static/logo.png').default}
+            onClick={() => navigate('/')}
+            alt="logo"
+          />
+        )}
         <Nav siteMetadata={data.site.siteMetadata} />
       </header>
       <main>
