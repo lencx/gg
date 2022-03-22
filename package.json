@@ -14,13 +14,14 @@
   ],
   "scripts": {
     "dev": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
     "rgd": "rgd",
     "posts": "rgd --owner=lencx --repo=gatsby-github-template --mode=json,rss --jsonfmt=true --outdir=discussions",
-    "reconf": "node ./scripts/reconf"
+    "reconf": "node ./scripts/reconf",
+    "reset": "node ./scripts/reset"
   },
   "dependencies": {
     "@iconify-icons/bxs": "^1.2.3",
