@@ -1,0 +1,66 @@
+.issues-page {
+  h1 {
+    font-size: 24px;
+
+    > span {
+      padding: 0 5px;
+      background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(180, 180, 180, 0.5) 50%
+      );
+    }
+
+    .issues-num {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+  }
+
+  .labels {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .ques-content {
+    display: flex;
+    margin-top: 5px;
+    min-height: 120px;
+
+    .quesicon {
+      margin-right: 3px;
+    }
+
+    .quescontent {
+      width: 100%;
+    }
+  }
+
+  .vote {
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    align-items: center;
+  }
+
+  .answer-content {
+    .answericon {
+      padding: 5px 0 0;
+      text-align: center;
+      background-color: rgba(180, 180, 180, 0.3);
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .comments {
+    &-item {
+      padding-left: 3px;
+      border-left: solid 1px rgba(180, 180, 180, 0.3);
+      padding-bottom: 1px;
+      &-content {
+        margin-left: 20px;
+      }
+    }
+  }
+}

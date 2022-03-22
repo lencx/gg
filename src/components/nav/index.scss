@@ -1,0 +1,153 @@
+.dev-nav {
+  height: var(--layout-header-height);
+
+  * {
+    transition: none;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-screen {
+    nav li {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      font-weight: bold;
+      color: var(--icon);
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .dev-nav {
+    display: flex;
+    align-items: center;
+
+    .nav-icon {
+      width: 24px;
+      overflow: hidden;
+      height: 24px;
+      cursor: pointer;
+
+      span {
+        width: 24px;
+        height: 3px;
+        background: #999;
+        display: block;
+        margin: 4px 0;
+        transition: all 300ms ease;
+      }
+
+      .top {
+        transform: translateX(6px);
+      }
+
+      .bottom {
+        transform: translateX(8px);
+      }
+
+      &.active {
+        .top {
+          transform: rotate(225deg) translateY(-5px) translateX(-5px);
+        }
+
+        .middle {
+          transform: translateX(24px);
+        }
+
+        .bottom {
+          transform: rotate(135deg) translateY(5px) translateX(-5px);
+        }
+      }
+    }
+  }
+
+  .nav-icon {
+    display: block;
+  }
+
+  .nav-screen {
+    position: fixed;
+    height: 0;
+    width: 100%;
+    left: 0;
+    top: var(--layout-header-height);
+    background-color: var(--theme-header-background-color);
+    overflow: hidden;
+    z-index: 1000;
+    transition: height 150ms ease-out;
+
+    > div {
+      padding: 20px;
+    }
+
+    &.open {
+      height: calc(100vh - var(--layout-header-height));
+    }
+
+    nav {
+      text-align: center;
+      font-size: 16px;
+
+      svg {
+        font-size: 24px;
+        margin-right: 10px;
+      }
+
+      li {
+        padding: 8px 0;
+        justify-content: center;
+      }
+    }
+
+    .icons {
+      margin-top: 40px;
+      justify-content: center;
+
+      .icon-action {
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 721px) {
+  .nav-icon {
+    display: none;
+  }
+
+  .nav-screen {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+
+    > div {
+      display: flex;
+    }
+
+    .icons {
+      .icon-action {
+        margin: 0 5px;
+      }
+    }
+
+    nav {
+      margin-right: 20px;
+
+      svg {
+        margin-right: 4px;
+      }
+
+      li {
+        float: left;
+        height: 100%;
+        font-size: 14px;
+        margin-right: 20px;
+      }
+    }
+  }
+}

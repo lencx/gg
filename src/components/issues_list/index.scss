@@ -1,0 +1,17 @@
+.issues-list {
+  .issues-item {
+    margin-bottom: 10px;
+    display: flex;
+    text-align: left;
+    align-items: baseline;
+
+    .issues-num {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+  }
+}

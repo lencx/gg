@@ -1,0 +1,34 @@
+.author-info {
+  margin-bottom: 3px;
+
+  .author {
+    cursor: pointer;
+
+    .name {
+      font-weight: 500;
+    }
+
+    img {
+      width: 30px;
+      border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+  }
+
+  span,
+  i {
+    font-size: 14px;
+  }
+
+  .date {
+    opacity: 0.4;
+    margin-left: 10px;
+  }
+
+  .number {
+    float: right;
+    opacity: 0.3;
+    line-height: 26px;
+  }
+}

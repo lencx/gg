@@ -1,0 +1,22 @@
+.labels-page {
+  text-align: center;
+
+  .markdown-body {
+    display: inline-block;
+  }
+
+  .labels-head {
+    display: block;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 1px 2px #000;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+}

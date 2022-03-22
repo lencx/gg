@@ -1,0 +1,15 @@
+.category {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 10px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 5px;
+  border-radius: 4px;
+  vertical-align: middle;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgba(180, 180, 180, 0.3) !important;
+  text-decoration: none !important;
+  color: var(--color-fg-default) !important;
+}

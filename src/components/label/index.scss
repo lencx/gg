@@ -1,0 +1,28 @@
+.label {
+  display: inline-block;
+  height: 18px;
+  font-size: 12px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  vertical-align: middle;
+  line-height: 17px;
+
+  b {
+    display: inline-block;
+    padding: 0 3px 0 2px;
+    color: #fff;
+    height: 100%;
+  }
+
+  em {
+    display: inline-block;
+    padding: 0 3px;
+    height: 100%;
+    color: var(--theme-text);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+}

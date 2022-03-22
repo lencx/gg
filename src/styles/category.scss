@@ -1,0 +1,25 @@
+.category-page {
+  text-align: center;
+
+  .markdown-body {
+    display: inline-block;
+  }
+
+  .category-head {
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    .category {
+      font-size: 16px;
+      height: 28px;
+      line-height: 28px;
+      font-weight: bold;
+      padding: 0 8px;
+    }
+
+    .desc {
+      opacity: 0.4;
+      vertical-align: middle;
+    }
+  }
+}
