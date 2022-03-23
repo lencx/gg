@@ -20,7 +20,7 @@ const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
     <div className={clsx('nav-screen', { open: isHide })}>
       <div>
         <nav>
-          <li onClick={() => navigate(`category`)}>
+          <li onClick={() => navigate(`/category`)}>
             <Icon
               className="icon-action"
               icon={iconCategory}
@@ -29,7 +29,7 @@ const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
             />
             Category
           </li>
-          <li onClick={() => navigate(`labels`)}>
+          <li onClick={() => navigate(`/labels`)}>
             <Icon
               className="icon-action"
               icon={iconTags}

@@ -18,7 +18,7 @@ const PrevNext: FC<PrevNextProps> = (props) => {
   return (
     <div className="gg-issues-prev-next">
       {prev && (
-        <Link className="prev" to={`issues/${prev.number}`}>
+        <Link className="prev" to={`/issues/${prev.number}`}>
           <span>
             <Icon className="icon-action" icon={iconPrev} fontSize="20" />
             {prev.title}
@@ -26,7 +26,7 @@ const PrevNext: FC<PrevNextProps> = (props) => {
         </Link>
       )}
       {next && (
-        <Link className="next" to={`issues/${next.number}`}>
+        <Link className="next" to={`/issues/${next.number}`}>
           <span>
             {next.title}
             <Icon className="icon-action" icon={iconNext} fontSize="20" />

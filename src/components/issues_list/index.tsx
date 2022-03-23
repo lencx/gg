@@ -22,7 +22,7 @@ const IssuesList: FC<IssuesListProps> = (props) => {
         return (
           <div key={node.number} className="issues-item">
             <IssuesNum repo={repo} number={node.number} len={nlen} />
-            <Link className="title" to={`issues/${node.number}`}>
+            <Link className="title" to={`/issues/${node.number}`}>
               {node.title}
             </Link>
           </div>

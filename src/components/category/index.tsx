@@ -15,7 +15,7 @@ const Category: FC<CategoryProps> = ({ data, go }) => {
   return (
     <Link
       className="gg-category"
-      to={go ? go : `category/${fmtURI(data.name, true)}`}
+      to={go ? go : `/category/${fmtURI(data.name, true)}`}
       target={go ? '_blank' : '_self'}
     >
       {getEmoji(data.emoji)} {data.name}

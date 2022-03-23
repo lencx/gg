@@ -29,7 +29,7 @@ export default function IndexPage(props: any) {
                 />
                 <div className="post-info">
                   <Category data={category} />
-                  <Link className="title" to={`issues/${node.number}`}>
+                  <Link className="title" to={`/issues/${node.number}`}>
                     {node.title}
                   </Link>
                 </div>

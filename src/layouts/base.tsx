@@ -26,15 +26,12 @@ export default function Layout(props: LayoutProps) {
       <div className={clsx('gg-container', props.className)}>
         <header>
           {!data.userLogo ? (
-            <Logo
-              onClick={() => navigate(`${data.assetPrefix}`)}
-              color="var(--gg-logo)"
-            />
+            <Logo onClick={() => navigate(`/`)} color="var(--gg-logo)" />
           ) : (
             <img
               className="imglogo"
               src={require('../static/logo.png').default}
-              onClick={() => navigate(`${data.assetPrefix}`)}
+              onClick={() => navigate(`/`)}
               alt="logo"
             />
           )}

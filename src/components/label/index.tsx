@@ -15,7 +15,7 @@ const Label: FC<LabelProps> = ({ data }) => {
       key={data.name}
       className="gg-label"
       style={{ borderColor: `#${data.color}` }}
-      to={`labels/${fmtURI(data.name)}`}
+      to={`/labels/${fmtURI(data.name)}`}
     >
       <b style={{ background: `#${data.color}` }}>#</b>
       <em>{data.name}</em>
