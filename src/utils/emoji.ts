@@ -26,6 +26,13 @@ const emojiMap: Record<string, string> = {
   exploding_head: '🤯',
   hammer_and_wrench: '🛠️',
   globe_with_meridians: '🌐',
+  page_facing_up: '📄',
+  thinking: '🤔',
+  sparkling_heart: '💖',
+  boom: '💥',
+  collision: '💥',
+  anger: '💢',
+  books: '📚'
 }
 
-export default (emoji: string): string => emojiMap[emoji.slice(1, -1)];
+export default (emoji: string): string => emojiMap[emoji.slice(1, -1)] || '';

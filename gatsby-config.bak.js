@@ -44,7 +44,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `GG`,
-        short_name: `G2`,
+        short_name: `GG`,
         start_url: `/`,
         background_color: `#fafafa`,
         theme_color: `#232629`,

@@ -1,4 +1,10 @@
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
+const slugify = require('slugify');
+
+const fmtURI = (uri, isSlugify) =>
+  isSlugify
+    ? slugify(uri, { lower: true, remove: /[*+~.()'"!:@]/g })
+    : uri.toLocaleLowerCase().replace(/ /g, '+');
 
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
@@ -80,7 +86,7 @@ exports.createPages = async function ({ actions, graphql }) {
   // create category pages
   for (let [key, value] of categoryMap.entries()) {
     actions.createPage({
-      path: `category/${key}`,
+      path: `category/${fmtURI(key, true)}`,
       component: require.resolve(`./src/templates/category.tsx`),
       context: { category: value, name: key, nlen },
     });
@@ -89,7 +95,7 @@ exports.createPages = async function ({ actions, graphql }) {
   // create labels pages
   for (let [key, value] of labelsMap.entries()) {
     actions.createPage({
-      path: `labels/${key}`,
+      path: `labels/${fmtURI(key)}`,
       component: require.resolve(`./src/templates/labels.tsx`),
       context: { labels: value, name: key, nlen },
     });
