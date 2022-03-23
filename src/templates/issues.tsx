@@ -78,6 +78,7 @@ export default function BlogIssues(props: any) {
           <div className="comments">
             {hasComments &&
               !isHide &&
+              comments?.[0]?.node?.author?.login &&
               comments.map(({ node }: any) => {
                 const _replies = node.replies.edges;
                 return (
