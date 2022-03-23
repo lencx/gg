@@ -4,7 +4,7 @@ module.exports = {
     title: `Gatsby GitHub Template`,
     description: `A gatsby website builder based on github discussions`,
     owner: `lencx`,
-    repo: `https://github.com/lencx/gatsby-github-template`,
+    repo: `https://github.com/lencx/gg`,
     rss: `/feed.xml`,
     userLogo: false,
   },
