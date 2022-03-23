@@ -56,6 +56,7 @@ async function gatsbyConfUpdate() {
   }
 
   // pathPrefix
+  // https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/
   if (rgdConf.cname) {
     conf.pathPrefix = `/`;
   } else {
