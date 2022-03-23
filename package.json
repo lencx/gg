@@ -19,7 +19,7 @@
     "clean": "gatsby clean",
     "rgd": "rgd",
     "deploy": "node ./scripts/deploy",
-    "posts": "rgd --owner=lencx --repo=gatsby-github-template --mode=json,rss --jsonfmt=true --outdir=discussions",
+    "posts": "rgd --mode=json,rss --jsonfmt=true --outdir=discussions",
     "reconf": "node ./scripts/reconf",
     "reset": "node ./scripts/reset",
     "copy": "node ./scripts/copy"

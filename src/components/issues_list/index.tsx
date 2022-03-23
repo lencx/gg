@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { Link } from 'gatsby';
 
 import IssuesNum from '@comps/issues_num';
-import { go, fmtIssues } from '@utils/tools';
 
 import './index.scss';
 
