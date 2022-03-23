@@ -2,10 +2,10 @@ const { spawnSync } = require('child_process');
 const argv = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
 
-const { token } = argv;
+const { token, owner, repo } = argv;
 
-if (!token) {
-  console.log(chalk.red('required: `token`'));
+if (!token || !owner || !repo) {
+  console.log(chalk.red('required: `token`, `owner`, `repo`'));
   process.exit();
 }
 
@@ -18,7 +18,11 @@ async function init() {
   spawnSync('yarn', { stdio: 'inherit' });
 
   // download issues
-  spawnSync('yarn', ['posts', `--token=${token}`], { stdio: 'inherit' });
+  spawnSync(
+    'yarn',
+    ['posts', `--token=${token}`, `--owner=${owner}`, `--repo=${repo}`],
+    { stdio: 'inherit' }
+  );
 
   // initialize gatsby configuration
   spawnSync('yarn', ['reconf'], { stdio: 'inherit' });
