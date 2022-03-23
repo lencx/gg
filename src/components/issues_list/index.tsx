@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'gatsby';
 
 import IssuesNum from '@comps/issues_num';
+import useSite from '@hooks/useSite';
 
 import './index.scss';
 
@@ -11,9 +12,9 @@ interface IssuesListProps {
 }
 
 const IssuesList: FC<IssuesListProps> = (props) => {
+  const { repo } = useSite();
   const data = props.data.allDiscussionsJson.nodes;
   const nlen = props.pageContext.nlen;
-  const repo = props.data.site.siteMetadata.repo;
 
   return (
     <div className="issues-list">
