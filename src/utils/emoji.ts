@@ -32,7 +32,10 @@ const emojiMap: Record<string, string> = {
   boom: '💥',
   collision: '💥',
   anger: '💢',
-  books: '📚'
+  book: '📖',
+  open_book: '📖',
+  books: '📚',
+  game_die: '🎲'
 }
 
 export default (emoji: string): string => emojiMap[emoji.slice(1, -1)] || '';
