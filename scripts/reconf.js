@@ -57,9 +57,9 @@ async function gatsbyConfUpdate() {
 
   // assetPrefix
   if (rgdConf.cname) {
-    conf.assetPrefix = '';
+    conf.siteMetadata.assetPrefix = `/`;
   } else {
-    conf.assetPrefix = `https://${rgdConf.owner}.github.io/${rgdConf.repo}`;
+    conf.siteMetadata.assetPrefix = `/${rgdConf.repo}/`;
   }
 
   // siteMetadata

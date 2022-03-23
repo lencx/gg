@@ -1,5 +1,4 @@
 module.exports = {
-  assetPrefix: `https://lencx.github.io/gatsby-github-template`,
   siteMetadata: {
     title: `Gatsby GitHub Template`,
     description: `A gatsby website builder based on github discussions`,
@@ -7,6 +6,7 @@ module.exports = {
     repo: `https://github.com/lencx/gatsby-github-template`,
     rss: `/feed.xml`,
     userLogo: false,
+    assetPrefix: `/`,
   },
   plugins: [
     `gatsby-plugin-sass`,

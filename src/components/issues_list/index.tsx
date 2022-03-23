@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Link } from 'gatsby';
 
 import IssuesNum from '@comps/issues_num';
+import usePrefix from '@hooks/usePrefix';
 
 import './index.scss';
 
@@ -11,6 +12,7 @@ interface IssuesListProps {
 }
 
 const IssuesList: FC<IssuesListProps> = (props) => {
+  const prefix = usePrefix();
   const data = props.data.allDiscussionsJson.nodes;
   const nlen = props.pageContext.nlen;
   const repo = props.data.site.siteMetadata.repo;
@@ -21,7 +23,7 @@ const IssuesList: FC<IssuesListProps> = (props) => {
         return (
           <div key={node.number} className="issues-item">
             <IssuesNum repo={repo} number={node.number} len={nlen} />
-            <Link className="title" to={`/issues/${node.number}`}>
+            <Link className="title" to={`${prefix}issues/${node.number}`}>
               {node.title}
             </Link>
           </div>

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
+import { Link } from 'gatsby';
 
-import { go, fmtIssues } from '@utils/tools';
+import { fmtIssues } from '@utils/tools';
 
 import './index.scss';
 
@@ -13,9 +14,9 @@ interface IssuesNumProps {
 const IssuesNum: FC<IssuesNumProps> = (props) => {
   const issuesLink = `${props.repo}/discussions/${props.number}`;
   return (
-    <a className="number issues-num" href={issuesLink} target="_blank">
+    <Link className="number issues-num" to={issuesLink} target="_blank">
       {props.len ? fmtIssues(props.number, props.len) : `#${props.number}`}
-    </a>
+    </Link>
   );
 };
 

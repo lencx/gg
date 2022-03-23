@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 
 import Layout from '@layouts/base';
 import IssuesList from '@comps/issues_list';
-import { go, fmtURI } from '@utils/tools';
+import { fmtURI } from '@utils/tools';
 import '@styles/labels.scss';
 
 export default function BlogCategory(props: any) {
@@ -20,7 +20,7 @@ export default function BlogCategory(props: any) {
           to={labelsLink}
           className="labels-head"
           style={{ background: `#${labelsInfo.color}` }}
-          onClick={() => go(labelsLink)}
+          target="_blank"
         >
           {labelsInfo.name}
         </Link>

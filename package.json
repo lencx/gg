@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "dev": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "rgd": "rgd",

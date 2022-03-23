@@ -7,6 +7,7 @@ import iconRss from '@iconify-icons/mdi/rss';
 import iconCategory from '@iconify-icons/bxs/category';
 import iconTags from '@iconify-icons/mdi/tag-multiple';
 
+import usePrefix from '@hooks/usePrefix';
 import ThemeSwitch from '@comps/theme_switch';
 import { go } from '@utils/tools';
 
@@ -16,11 +17,12 @@ interface NavScreenProps {
 }
 
 const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
+  const prefix = usePrefix();
   return (
     <div className={clsx('nav-screen', { open: isHide })}>
       <div>
         <nav>
-          <li onClick={() => navigate('/category')}>
+          <li onClick={() => navigate(`${prefix}category`)}>
             <Icon
               className="icon-action"
               icon={iconCategory}
@@ -29,7 +31,7 @@ const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
             />
             Category
           </li>
-          <li onClick={() => navigate('/labels')}>
+          <li onClick={() => navigate(`${prefix}labels`)}>
             <Icon
               className="icon-action"
               icon={iconTags}

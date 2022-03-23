@@ -2,13 +2,14 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '@layouts/base';
+import useSite from '@hooks/useSite';
 import Author from '@comps/author';
 import Category from '@comps/category';
 import IssuesNum from '@comps/issues_num';
 import '@styles/home.scss';
 
 export default function IndexPage(props: any) {
-  const repo = props.data.site.siteMetadata.repo;
+  const siteData = useSite();
 
   return (
     <Layout className="home-page">
@@ -22,11 +23,16 @@ export default function IndexPage(props: any) {
                 <Author
                   author={node.author}
                   date={node.updatedAt}
-                  extra={<IssuesNum repo={repo} number={node.number} />}
+                  extra={
+                    <IssuesNum repo={siteData.repo} number={node.number} />
+                  }
                 />
                 <div className="post-info">
                   <Category data={category} />
-                  <Link className="title" to={`/issues/${node.number}`}>
+                  <Link
+                    className="title"
+                    to={`${siteData.assetPrefix}issues/${node.number}`}
+                  >
                     {node.title}
                   </Link>
                 </div>
