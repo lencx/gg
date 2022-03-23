@@ -55,11 +55,11 @@ async function gatsbyConfUpdate() {
     });
   }
 
-  // assetPrefix
+  // pathPrefix
   if (rgdConf.cname) {
-    conf.assetPrefix = ``;
+    conf.pathPrefix = `/`;
   } else {
-    conf.assetPrefix = `/${rgdConf.repo}`;
+    conf.pathPrefix = `/${rgdConf.repo}`;
   }
 
   // siteMetadata
