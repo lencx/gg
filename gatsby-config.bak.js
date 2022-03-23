@@ -1,4 +1,5 @@
 module.exports = {
+  assetPrefix: '',
   siteMetadata: {
     title: `Gatsby GitHub Template`,
     description: `A gatsby website builder based on github discussions`,

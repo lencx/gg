@@ -58,19 +58,17 @@ exports.createPages = async function ({ actions, graphql }) {
   let labelsMap = new Map();
   let nlen = 0;
 
-  let prefix = data.site.siteMetadata.assetPrefix;
+  // // index page
+  // actions.createPage({
+  //   path: `/`,
+  //   component: require.resolve(`./src/templates/index.tsx`),
+  // });
 
-  // index page
-  actions.createPage({
-    path: `${prefix}`,
-    component: require.resolve(`./src/templates/index.tsx`),
-  });
-
-  // 404 page
-  actions.createPage({
-    path: `${prefix}404`,
-    component: require.resolve(`./src/templates/404.tsx`),
-  });
+  // // 404 page
+  // actions.createPage({
+  //   path: `404`,
+  //   component: require.resolve(`./src/templates/404.tsx`),
+  // });
 
   data.allDiscussionsJson.edges.forEach(({ previous, next, node }) => {
     const curr = node.node;
@@ -82,7 +80,7 @@ exports.createPages = async function ({ actions, graphql }) {
 
     // create issues pages
     actions.createPage({
-      path: `${prefix}issues/${number}`,
+      path: `issues/${number}`,
       component: require.resolve(`./src/templates/issues.tsx`),
       context: { number, previous: previous?.node, next: next?.node },
     });
@@ -105,7 +103,7 @@ exports.createPages = async function ({ actions, graphql }) {
   // create category pages
   for (let [key, value] of categoryMap.entries()) {
     actions.createPage({
-      path: `${prefix}category/${fmtURI(key, true)}`,
+      path: `category/${fmtURI(key, true)}`,
       component: require.resolve(`./src/templates/category.tsx`),
       context: { category: value, name: key, nlen },
     });
@@ -114,7 +112,7 @@ exports.createPages = async function ({ actions, graphql }) {
   // create labels pages
   for (let [key, value] of labelsMap.entries()) {
     actions.createPage({
-      path: `${prefix}labels/${fmtURI(key)}`,
+      path: `labels/${fmtURI(key)}`,
       component: require.resolve(`./src/templates/labels.tsx`),
       context: { labels: value, name: key, nlen },
     });
@@ -122,14 +120,14 @@ exports.createPages = async function ({ actions, graphql }) {
 
   // categories page
   actions.createPage({
-    path: `${prefix}category`,
+    path: `category`,
     component: require.resolve(`./src/templates/nav-category.tsx`),
     context: { categoryList: Array.from(categoryMap.values()) },
   });
 
   // labels page
   actions.createPage({
-    path: `${prefix}labels`,
+    path: `labels`,
     component: require.resolve(`./src/templates/nav-labels.tsx`),
     context: { labelsList: Array.from(labelsMap.values()) },
   });
