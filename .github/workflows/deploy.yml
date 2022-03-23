@@ -16,11 +16,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: yarn
-      - run: yarn posts --token=${{ secrets.GH_TOKEN }}
-      - run: yarn reconf
-      - run: yarn build
-      - run: yarn copy
+      - run: yarn deploy --token=${{ secrets.GH_TOKEN }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -17,8 +17,8 @@
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
     "rgd": "rgd",
+    "deploy": "node ./scripts/deploy",
     "posts": "rgd --owner=lencx --repo=gatsby-github-template --mode=json,rss --jsonfmt=true --outdir=discussions",
     "reconf": "node ./scripts/reconf",
     "reset": "node ./scripts/reset",
@@ -40,9 +40,11 @@
     "gatsby-source-filesystem": "^4.8.0",
     "gatsby-transformer-json": "^4.8.0",
     "github-markdown-css": "^5.1.0",
+    "minimist": "^1.2.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sass": "^1.49.9",
+    "slugify": "^1.6.5",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "devDependencies": {
