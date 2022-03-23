@@ -57,11 +57,9 @@ async function gatsbyConfUpdate() {
 
   // assetPrefix
   if (rgdConf.cname) {
-    conf.siteMetadata.assetPrefix = `/`;
     conf.assetPrefix = ``;
   } else {
     conf.assetPrefix = `/${rgdConf.repo}`;
-    conf.siteMetadata.assetPrefix = `/${rgdConf.repo}/`;
   }
 
   // siteMetadata

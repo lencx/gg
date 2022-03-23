@@ -9,11 +9,6 @@ const fmtURI = (uri, isSlugify) =>
 exports.createPages = async function ({ actions, graphql }) {
   const { data } = await graphql(`
     query {
-      site {
-        siteMetadata {
-          assetPrefix
-        }
-      }
       allDiscussionsJson {
         edges {
           previous {
@@ -57,18 +52,6 @@ exports.createPages = async function ({ actions, graphql }) {
   let categoryMap = new Map();
   let labelsMap = new Map();
   let nlen = 0;
-
-  // // index page
-  // actions.createPage({
-  //   path: `/`,
-  //   component: require.resolve(`./src/templates/index.tsx`),
-  // });
-
-  // // 404 page
-  // actions.createPage({
-  //   path: `404`,
-  //   component: require.resolve(`./src/templates/404.tsx`),
-  // });
 
   data.allDiscussionsJson.edges.forEach(({ previous, next, node }) => {
     const curr = node.node;

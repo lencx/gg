@@ -11,7 +11,6 @@ export default function useSite() {
           owner
           description
           userLogo
-          assetPrefix
         }
       }
     }

@@ -7,7 +7,6 @@ module.exports = {
     repo: `https://github.com/lencx/gatsby-github-template`,
     rss: `/feed.xml`,
     userLogo: false,
-    assetPrefix: `/`,
   },
   plugins: [
     `gatsby-plugin-sass`,

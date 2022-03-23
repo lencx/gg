@@ -6,6 +6,7 @@ import iconQues from '@iconify-icons/mdi/comment-question';
 import iconUpvote from '@iconify-icons/bxs/upvote';
 
 import Layout from '@layouts/base';
+import useSite from '@hooks/useSite';
 import Author from '@comps/author';
 import IssuesNum from '@comps/issues_num';
 import Category from '@comps/category';
@@ -14,6 +15,7 @@ import PrevNext from '@comps/prev_next';
 import '@styles/issues.scss';
 
 export default function BlogIssues(props: any) {
+  const { repo } = useSite();
   const [isHide, setHide] = useState(true);
   const data = props.data.issuesJson;
   const labels = data.labels.edges;
@@ -21,8 +23,6 @@ export default function BlogIssues(props: any) {
   const hasComments = comments.length > 0;
   const isa = data.category.isAnswerable;
   const author = data.author;
-
-  const repo = props.data.site.siteMetadata.repo;
   const pageCxt = props.pageContext;
 
   useEffect(() => {
@@ -111,11 +111,6 @@ export default function BlogIssues(props: any) {
 
 export const query = graphql`
   query DevIssuesQuery($number: Int!) {
-    site {
-      siteMetadata {
-        repo
-      }
-    }
     issuesJson(number: { eq: $number }) {
       id
       title

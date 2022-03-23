@@ -29,10 +29,7 @@ export default function IndexPage(props: any) {
                 />
                 <div className="post-info">
                   <Category data={category} />
-                  <Link
-                    className="title"
-                    to={`${siteData.assetPrefix}issues/${node.number}`}
-                  >
+                  <Link className="title" to={`issues/${node.number}`}>
                     {node.title}
                   </Link>
                 </div>
@@ -47,11 +44,6 @@ export default function IndexPage(props: any) {
 
 export const query = graphql`
   {
-    site {
-      siteMetadata {
-        repo
-      }
-    }
     allDiscussionsJson {
       nodes {
         node {
