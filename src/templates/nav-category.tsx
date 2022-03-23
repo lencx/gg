@@ -10,7 +10,7 @@ export default function BlogNavCategory(props: any) {
   const list = props.pageContext.categoryList;
 
   return (
-    <Layout className="nav-category-page">
+    <Layout className="nav-category-page" title="Category">
       <div className="markdown-body">
         <div className="page-title">
           <Icon className="icon" icon={iconCategory} fontSize="24" />

@@ -30,7 +30,7 @@ export default function BlogIssues(props: any) {
   }, []);
 
   return (
-    <Layout className="issues-page">
+    <Layout className="issues-page" title={`${data.title} | Issues`}>
       <div className="markdown-body">
         <h1>
           <span>

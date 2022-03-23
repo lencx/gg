@@ -14,7 +14,7 @@ export default function BlogCategory(props: any) {
   )}"`;
 
   return (
-    <Layout className="labels-page">
+    <Layout className="labels-page" title={`${labelsInfo.name} | Labels`}>
       <div className="markdown-body">
         <Link
           to={labelsLink}
