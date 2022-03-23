@@ -20,10 +20,10 @@ async function init() {
   // download issues
   spawnSync('yarn', ['posts', `--token=${token}`], { stdio: 'inherit' });
 
-  // // initialize gatsby configuration
+  // initialize gatsby configuration
   spawnSync('yarn', ['reconf'], { stdio: 'inherit' });
 
-  // // build
+  // build
   spawnSync('yarn', ['build'], { stdio: 'inherit' });
 
   // copy CNAME & feed.xml
