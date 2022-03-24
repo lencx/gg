@@ -57,7 +57,8 @@ async function gatsbyConfUpdate() {
 
   // pathPrefix
   // https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/
-  if (rgdConf.cname) {
+  isRoot = rgdConf.repo === `${rgdConf.owner}.github.io`;
+  if (rgdConf.cname || isRoot) {
     conf.pathPrefix = `/`;
   } else {
     conf.pathPrefix = `/${rgdConf.repo}`;
