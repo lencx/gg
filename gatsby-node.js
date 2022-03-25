@@ -148,7 +148,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       edges: [LabelsEdge]
     }
     type LabelsEdge {
-      node: Labels!
+      node: Labels
     }
     type Labels {
       id: String
@@ -158,8 +158,10 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type IssuesJson implements Node {
       labels: LabelsConnection
-      author: Author!
+      author: Author
       comments: CommentsConnection
+      category: Category
+      upvoteCount: Int
     }
 
     type CommentsConnection {
@@ -179,7 +181,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       edges: [RepliesEdge]
     }
     type RepliesEdge {
-      node: Replies!
+      node: Replies
     }
     type Replies {
       id: String!

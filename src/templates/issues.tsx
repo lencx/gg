@@ -17,16 +17,16 @@ import '@styles/issues.scss';
 export default function BlogIssues(props: any) {
   const { repo } = useSite();
   const [isHide, setHide] = useState(true);
-  const data = props.data.issuesJson;
-  const labels = data.labels.edges;
-  const comments = data.comments.edges;
-  const hasComments = comments.length > 0;
-  const isa = data.category.isAnswerable;
-  const author = data.author;
+  const data = props?.data?.issuesJson || {};
+  const labels = data.labels?.edges;
+  const comments = data.comments?.edges;
+  const hasComments = comments?.length > 0;
+  const isa = data?.category?.isAnswerable;
+  const author = data?.author || {};
   const pageCxt = props.pageContext;
 
   useEffect(() => {
-    setHide(data.category.isAnswerable);
+    setHide(data.category?.isAnswerable);
   }, []);
 
   return (
@@ -39,13 +39,14 @@ export default function BlogIssues(props: any) {
           </span>
         </h1>
         <div className="widget">
-          <Category data={data.category} />
-          {labels.map(({ node }: any) => {
-            return <Label key={node.name} data={node} />;
-          })}
+          <Category data={data?.category} />
+          {labels &&
+            labels.map(({ node }: any) => {
+              return <Label key={node.name} data={node} />;
+            })}
         </div>
         <div>
-          <Author author={author} date={data.updatedAt} />
+          <Author author={author} date={data?.updatedAt} />
           <div className="ques-content">
             {isa && (
               <div>
@@ -110,7 +111,7 @@ export default function BlogIssues(props: any) {
 }
 
 export const query = graphql`
-  query DevIssuesQuery($number: Int!) {
+  query GGIssuesQuery($number: Int!) {
     issuesJson(number: { eq: $number }) {
       id
       title

@@ -11,6 +11,7 @@ export default function useSite() {
           owner
           description
           userLogo
+          type
         }
       }
     }

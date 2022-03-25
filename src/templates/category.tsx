@@ -31,7 +31,7 @@ export default function BlogCategory(props: any) {
 }
 
 export const query = graphql`
-  query DevCategoryQuery($name: String!) {
+  query GGCategoryQuery($name: String!) {
     allDiscussionsJson(
       filter: { node: { category: { name: { eq: $name } } } }
     ) {

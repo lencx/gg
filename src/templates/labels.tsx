@@ -33,7 +33,7 @@ export default function BlogCategory(props: any) {
 }
 
 export const query = graphql`
-  query DevLabelsQuery($name: String!) {
+  query GGLabelsQuery($name: String!) {
     allDiscussionsJson(
       filter: {
         node: {
