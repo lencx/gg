@@ -80,7 +80,7 @@ export default function BlogIssues(props: any) {
               !isHide &&
               comments?.[0]?.node?.author?.login &&
               comments.map(({ node }: any) => {
-                const _replies = node.replies.edges;
+                const _replies = node?.replies?.edges;
                 return (
                   <div className="comments-item" key={node.id}>
                     <Author author={node.author} />
@@ -88,7 +88,7 @@ export default function BlogIssues(props: any) {
                       className="comments-item-content"
                       dangerouslySetInnerHTML={{ __html: node.bodyHTML }}
                     />
-                    {_replies.map(({ node: node2 }: any) => {
+                    {_replies?.map(({ node: node2 }: any) => {
                       return (
                         <div className="comments-item" key={node2.id}>
                           <Author author={node2.author} />

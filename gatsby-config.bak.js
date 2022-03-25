@@ -7,6 +7,7 @@ module.exports = {
     repo: `https://github.com/lencx/gg`,
     rss: `/feed.xml`,
     userLogo: false,
+    type: 'discussions',
   },
   plugins: [
     `gatsby-plugin-sass`,

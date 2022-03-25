@@ -68,6 +68,7 @@ async function gatsbyConfUpdate() {
   conf.siteMetadata.title = rgdConf.title;
   conf.siteMetadata.description = rgdConf.description;
   conf.siteMetadata.owner = rgdConf.owner;
+  conf.siteMetadata.type = rgdConf.type;
   conf.siteMetadata.repo = `https://github.com/${rgdConf.owner}/${rgdConf.repo}`;
 
   // download logo
@@ -86,7 +87,11 @@ async function gatsbyConfUpdate() {
 function pkgUpdate() {
   pkg.name = rgdConf.repo;
   pkg.description = rgdConf.description;
-  pkg.scripts.posts = `rgd --owner=${rgdConf.owner} --repo=${rgdConf.repo} --mode=json,rss --jsonfmt=true --outdir=discussions`;
+  let issuesInfo = '';
+  if (rgdConf['issues-owner'] && rgdConf['issues-repo']) {
+    issuesInfo = ` --issues-owner=${rgdConf['issues-owner']} --issues-repo=${rgdConf['issues-repo']}`;
+  }
+  pkg.scripts.posts = `rgd --owner=${rgdConf.owner} --repo=${rgdConf.repo} --mode=json,rss --jsonfmt=true --outdir=discussions${issuesInfo}`;
 
   fs.writeFile('package.json', JSON.stringify(pkg, null, 2), function (err) {
     if (err) return;

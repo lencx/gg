@@ -53,7 +53,7 @@ exports.createPages = async function ({ actions, graphql }) {
   let labelsMap = new Map();
   let nlen = 0;
 
-  data.allDiscussionsJson.edges.forEach(({ previous, next, node }) => {
+  data?.allDiscussionsJson?.edges?.forEach(({ previous, next, node }) => {
     const curr = node.node;
     const number = curr.number;
 
@@ -69,18 +69,19 @@ exports.createPages = async function ({ actions, graphql }) {
     });
 
     // category
-    const category = curr.category;
-    if (!categoryMap.get(category.name)) {
-      categoryMap.set(category.name, category);
+    const category = curr?.category;
+    if (category && !categoryMap.get(category?.name)) {
+      categoryMap.set(category?.name, category);
     }
 
     // labels
-    const labels = curr.labels.edges;
-    labels.forEach((label) => {
-      if (!labelsMap.get(label.node.name)) {
-        labelsMap.set(label.node.name, label.node);
-      }
-    });
+    const labels = curr?.labels?.edges;
+    labels &&
+      labels.forEach((label) => {
+        if (!labelsMap.get(label.node.name)) {
+          labelsMap.set(label.node.name, label.node);
+        }
+      });
   });
 
   // create category pages
@@ -126,4 +127,70 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       }),
     ],
   });
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type DiscussionsJsonNode {
+      category: Category
+      labels: LabelsConnection
+    }
+
+    type Category {
+      name: String!
+      emoji: String!
+      description: String!
+      isAnswerable: Boolean!
+    }
+
+    type LabelsConnection {
+      edges: [LabelsEdge]
+    }
+    type LabelsEdge {
+      node: Labels!
+    }
+    type Labels {
+      id: String
+      name: String
+      color: String
+    }
+
+    type IssuesJson implements Node {
+      labels: LabelsConnection
+      author: Author!
+      comments: CommentsConnection
+    }
+
+    type CommentsConnection {
+      edges: [CommentsEdge]
+    }
+    type CommentsEdge {
+      node: IssuesJsonCommentsEdgesNode
+    }
+
+    type IssuesJsonCommentsEdgesNode {
+      id: String!
+      bodyHTML: String!
+      author: Author!
+      replies: RepliesConnection
+    }
+    type RepliesConnection {
+      edges: [RepliesEdge]
+    }
+    type RepliesEdge {
+      node: Replies!
+    }
+    type Replies {
+      id: String!
+      bodyHTML: String!
+      author: Author!
+    }
+    type Author {
+      login: String!
+      avatarUrl: String!
+      url: String!
+    }
+  `;
+  createTypes(typeDefs);
 };

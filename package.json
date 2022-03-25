@@ -50,6 +50,6 @@
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^3.1.0",
-    "rgd": "^1.2.3"
+    "rgd": "^2.0.0"
   }
 }

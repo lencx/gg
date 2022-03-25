@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 import getEmoji from '@utils/emoji';
 import { fmtURI } from '@utils/tools';
@@ -12,6 +12,7 @@ interface CategoryProps {
 }
 
 const Category: FC<CategoryProps> = ({ data, go }) => {
+  if (!(data && data?.name)) return null;
   return (
     <Link
       className="gg-category"

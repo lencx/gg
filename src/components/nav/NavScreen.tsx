@@ -20,15 +20,17 @@ const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
     <div className={clsx('nav-screen', { open: isHide })}>
       <div>
         <nav>
-          <li onClick={() => navigate(`/category`)}>
-            <Icon
-              className="icon-action"
-              icon={iconCategory}
-              fontSize="20"
-              color="var(--gg-icon)"
-            />
-            Category
-          </li>
+          {siteMetadata.type !== 'issues' && (
+            <li onClick={() => navigate(`/category`)}>
+              <Icon
+                className="icon-action"
+                icon={iconCategory}
+                fontSize="20"
+                color="var(--gg-icon)"
+              />
+              Category
+            </li>
+          )}
           <li onClick={() => navigate(`/labels`)}>
             <Icon
               className="icon-action"

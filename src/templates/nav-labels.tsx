@@ -20,6 +20,7 @@ export default function BlogNavCategory(props: any) {
           {list.map((item: any, idx: number) => {
             return <Label key={+idx} data={item} />;
           })}
+          {list.length === 0 && <span className="gg-empty">No Data</span>}
         </div>
       </div>
     </Layout>
