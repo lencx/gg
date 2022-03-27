@@ -44,7 +44,7 @@ export default function BlogLabelsCategory(props: any) {
   const hasUser = includes(website?.home_layout, 'user');
 
   return (
-    <Layout className="labels-category-page" title="Labels">
+    <Layout className="labels-category-page">
       <div className="markdown-body issues-list">
         <div className="gg-label-category-head">
           <div className="category-group">
