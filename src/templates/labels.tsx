@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '@layouts/base';
 import useRepoLink from '@hooks/useRepoLink';
@@ -22,14 +22,14 @@ export default function BlogCategory(props: any) {
   return (
     <Layout className="labels-page" title={`${labelsInfo.name} | Labels`}>
       <div className="markdown-body">
-        <Link
-          to={labelsLink}
+        <a
+          href={labelsLink}
           className="labels-head"
           style={{ background: `#${labelsInfo.color}` }}
           target="_blank"
         >
           {labelsInfo.name}
-        </Link>
+        </a>
 
         {labelsInfo.description && (
           <div className="label-desc">{labelsInfo.description}</div>

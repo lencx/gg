@@ -21,7 +21,7 @@ interface LayoutProps {
 export default function Layout(props: LayoutProps) {
   const data = useRgd();
   const siteData = useSite();
-  const { siteRepo } = useRepoLink();
+  const { dataRepo, repoTxt } = useRepoLink();
 
   return (
     <HelmetProvider>
@@ -50,21 +50,40 @@ export default function Layout(props: LayoutProps) {
           <div className="content">{props.children}</div>
         </main>
         <footer>
-          <a
-            rel="license"
-            href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
-            target="_blank"
-          >
-            <img
-              style={{ width: 60, height: 21 }}
-              src={require('@icons/license.svg').default}
-              alt="License"
-            />
-          </a>{' '}
-          Copyright © {data?.website?.built_date || new Date().getFullYear()}
-          -present
-          <span className="owner" onClick={() => go(siteRepo)}>
-            {data.owner}/{data.repo}
+          <div className="license">
+            <a
+              rel="license"
+              href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+              target="_blank"
+            >
+              <img
+                style={{ width: 60, height: 21 }}
+                src={require('@icons/license.svg').default}
+                alt="License"
+              />
+            </a>
+          </div>
+          <div className="copyright">
+            <span>
+              Copyright ©{' '}
+              {data?.website?.built_date || new Date().getFullYear()}
+              -present
+            </span>
+            <a className="owner" href={dataRepo} target="_blank">
+              {repoTxt}
+            </a>
+            {'.'}
+          </div>
+          <span className="powered">
+            Powered by
+            <a
+              className="owner"
+              title="GG (Gatsby + GitHub) - A gatsby website builder based on github discussions"
+              href="https://github.com/lencx/gg"
+              target="_blank"
+            >
+              gg
+            </a>
           </span>
         </footer>
       </div>
