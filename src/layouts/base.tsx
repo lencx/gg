@@ -4,6 +4,7 @@ import { navigate } from 'gatsby';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 
 import useRgd from '@hooks/useRgd';
+import useSite from '@hooks/useSite';
 import useRepoLink from '@hooks/useRepoLink';
 import Logo from '@comps/logo';
 import Nav from '@comps/nav';
@@ -19,6 +20,7 @@ interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   const data = useRgd();
+  const siteData = useSite();
   const { siteRepo } = useRepoLink();
 
   return (
@@ -32,7 +34,7 @@ export default function Layout(props: LayoutProps) {
       </Helmet>
       <div className={clsx('gg-container', props.className)}>
         <header>
-          {!data.userLogo ? (
+          {!siteData?.userLogo ? (
             <Logo onClick={() => navigate(`/`)} color="var(--gg-logo)" />
           ) : (
             <img
