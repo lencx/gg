@@ -24,7 +24,6 @@ export default function useRgd() {
     }
   `);
   let _data = data?.file?.childrenDiscussionsJson?.[0] || {};
-  console.log('«27» /src/hooks/useRgd.ts ~> ', _data);
 
   if (!_data.owner) _data.owner = 'lencx';
   if (!_data.repo) _data.owner = 'gg';

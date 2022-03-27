@@ -42,12 +42,6 @@ export default function BlogLabelsCategory(props: any) {
 
   const listData = labelsMap?.[activeTab]?.list;
 
-  console.log(
-    '«45» /src/templates/labels-category.tsx ~> ',
-    issuesList,
-    website
-  );
-
   return (
     <Layout className="labels-category-page" title="Labels">
       <div className="markdown-body issues-list">

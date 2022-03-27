@@ -71,8 +71,10 @@ exports.createPages = async function ({ actions, graphql }) {
     const curr = node.node;
     const number = curr?.number;
 
+    if (!number) return;
+
     // number length
-    const _nlen = `${number || 0}`.length;
+    const _nlen = `${number}`.length;
     if (nlen < _nlen) nlen = _nlen;
 
     // create issues pages
