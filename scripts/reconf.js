@@ -101,17 +101,8 @@ function cnameUpdate() {
 function pkgUpdate() {
   pkg.name = rgdConf.repo;
   pkg.description = rgdConf.description || rgdConf.website?.description;
-  let issuesInfo = '';
-  if (rgdConf.issues_owner && rgdConf.issues_repo) {
-    let _type = 'discussions';
-    if (rgdConf.type === 'issues') _type = 'issues';
-    issuesInfo = ` --issues-owner=${rgdConf.issues_owner} --issues-repo=${rgdConf.issues_repo} --type=${_type}`;
-  }
-  pkg.scripts[
-    'posts:ci'
-  ] = `rgd --owner=${rgdConf.owner} --repo=${rgdConf.repo} --mode=json,rss --jsonfmt=true --outdir=discussions${issuesInfo}`;
 
-  fs.writeFile('package.json', JSON.stringify(pkg, null, 2), function (err) {
+  fs.writeFile('package.json', JSON.stringify(pkg, null, 2), (err) => {
     if (err) return;
     console.log(chalk.gray`[init]`, chalk.yellow`package.json`);
   });

@@ -20,7 +20,6 @@
     "rgd": "rgd",
     "deploy": "node ./scripts/deploy",
     "posts": "rgd --mode=json,rss --jsonfmt=true --outdir=discussions",
-    "posts:ci": "rgd",
     "reconf": "node ./scripts/reconf",
     "reset": "node ./scripts/reset",
     "copy": "node ./scripts/copy"

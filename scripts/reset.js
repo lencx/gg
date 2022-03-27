@@ -33,7 +33,6 @@ function cnameReset() {
 function pkgReset() {
   pkg.name = 'gg';
   pkg.description = 'A gatsby website builder based on github discussions';
-  pkg.scripts['posts:ci'] = 'rgd';
 
   fs.writeFile('package.json', JSON.stringify(pkg, null, 2), function (err) {
     if (err) return;
