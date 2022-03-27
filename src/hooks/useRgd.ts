@@ -15,6 +15,7 @@ export default function useRgd() {
             title
             description
             home
+            home_layout
             label_category
             label_level
             built_date

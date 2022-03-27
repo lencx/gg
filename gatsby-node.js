@@ -268,6 +268,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
         'description',
         'home',
         'built_date',
+        ['home_layout', '[String]!'],
         ['label_category', '[String]!'],
         ['label_level', '[String]!'],
       ]),

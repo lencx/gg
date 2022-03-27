@@ -41,6 +41,7 @@ export default function BlogLabelsCategory(props: any) {
   }, []);
 
   const listData = labelsMap?.[activeTab]?.list;
+  const hasUser = includes(website?.home_layout, 'user');
 
   return (
     <Layout className="labels-category-page" title="Labels">
@@ -94,21 +95,33 @@ export default function BlogLabelsCategory(props: any) {
                 if (!node) return null;
                 return (
                   <div key={node.number} className="item">
-                    <Author
-                      author={node.author}
-                      date={node.updatedAt}
-                      extra={<IssuesNum number={node.number} />}
-                    />
-                    <div className="labels-list">
-                      {node.labels.map((label: any) => {
-                        return <Label data={label} hasLevel />;
-                      })}
-                    </div>
+                    {hasUser && (
+                      <Author
+                        author={node.author}
+                        date={node.updatedAt}
+                        extra={<IssuesNum number={node.number} />}
+                      />
+                    )}
                     <div className="post-info">
+                      {!hasUser && (
+                        <IssuesNum
+                          className="label-issue"
+                          number={node.number}
+                        />
+                      )}
                       <Link className="title" to={`/issues/${node.number}`}>
                         {node.title}
                       </Link>
                     </div>
+                    {includes(website?.home_layout, 'label') && (
+                      <div className="labels-list">
+                        {node.labels.map((label: any) => {
+                          return (
+                            <Label key={label.name} data={label} hasLevel />
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 );
               })}

@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
+import clsx from 'clsx';
 
 import { fmtIssues } from '@utils/tools';
 import useRgd from '@hooks/useRgd';
@@ -9,6 +10,7 @@ import './index.scss';
 interface IssuesNumProps {
   number: number;
   len?: number;
+  className?: string;
 }
 
 const IssuesNum: FC<IssuesNumProps> = (props) => {
@@ -21,7 +23,11 @@ const IssuesNum: FC<IssuesNumProps> = (props) => {
     _link = `https://github.com/${rgdData.owner}/${rgdData.repo}/discussions/${props.number}`;
   }
   return (
-    <Link className="number issues-num" to={_link} target="_blank">
+    <Link
+      className={clsx('number issues-num', props.className)}
+      to={_link}
+      target="_blank"
+    >
       {props.len ? fmtIssues(props.number, props.len) : `#${props.number}`}
     </Link>
   );
