@@ -3,9 +3,12 @@ import clsx from 'clsx';
 import { navigate } from 'gatsby';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 
-import useSite from '@hooks/useSite';
+import useRgd from '@hooks/useRgd';
+import useRepoLink from '@hooks/useRepoLink';
 import Logo from '@comps/logo';
-import Nav from '@src/components/nav';
+import Nav from '@comps/nav';
+import BackTop from '@comps/backtop';
+import { go } from '@utils/tools';
 import '@styles/layout.scss';
 
 interface LayoutProps {
@@ -15,13 +18,17 @@ interface LayoutProps {
 }
 
 export default function Layout(props: LayoutProps) {
-  const data = useSite();
+  const data = useRgd();
+  const { siteRepo } = useRepoLink();
 
   return (
     <HelmetProvider>
       <Helmet>
-        <title>{props.title || data.title}</title>
-        <meta name="description" content={data.description} />
+        <title>{props.title || data?.title || data?.website?.title}</title>
+        <meta
+          name="description"
+          content={data?.description || data?.website?.description}
+        />
       </Helmet>
       <div className={clsx('gg-container', props.className)}>
         <header>
@@ -35,7 +42,7 @@ export default function Layout(props: LayoutProps) {
               alt="logo"
             />
           )}
-          <Nav siteMetadata={data} />
+          <Nav />
         </header>
         <main>
           <div className="content">{props.children}</div>
@@ -43,7 +50,7 @@ export default function Layout(props: LayoutProps) {
         <footer>
           <a
             rel="license"
-            href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+            href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
             target="_blank"
           >
             <img
@@ -52,9 +59,14 @@ export default function Layout(props: LayoutProps) {
               alt="License"
             />
           </a>{' '}
-          Copyright © 2022-present {data.owner}
+          Copyright © {data?.website?.built_date || new Date().getFullYear()}
+          -present
+          <span className="owner" onClick={() => go(siteRepo)}>
+            {data.owner}/{data.repo}
+          </span>
         </footer>
       </div>
+      <BackTop />
     </HelmetProvider>
   );
 }

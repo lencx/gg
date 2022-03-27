@@ -1,17 +1,16 @@
 const fs = require('fs');
 const chalk = require('chalk');
 
+const pkg = require('../package.json');
+
 init().catch(function (e) {
   console.log(e);
 });
 
-// gatsby-config.js
-async function gatsbyConfReset() {
-  const content = `module.exports = require('./gatsby-config.bak');\n`;
-  fs.writeFile('gatsby-config.js', content, function (err) {
-    if (err) return;
-    console.log(chalk.gray`[reset]`, chalk.yellow`gatsby-config.js`);
-  });
+// gg.config.json
+async function ggConfReset() {
+  fs.copyFileSync('scripts/gg.config.bak.json', 'gg.config.json');
+  console.log(chalk.gray`[reset]`, chalk.yellow`gg.config.json`);
 }
 
 // logo
@@ -30,8 +29,21 @@ function cnameReset() {
   }
 }
 
+// package.json
+function pkgReset() {
+  pkg.name = 'gg';
+  pkg.description = 'A gatsby website builder based on github discussions';
+  pkg.scripts['posts:ci'] = 'rgd';
+
+  fs.writeFile('package.json', JSON.stringify(pkg, null, 2), function (err) {
+    if (err) return;
+    console.log(chalk.gray`[reset]`, chalk.yellow`package.json`);
+  });
+}
+
 async function init() {
-  gatsbyConfReset();
+  ggConfReset();
+  pkgReset();
   logoReset();
   cnameReset();
 }

@@ -1,0 +1,32 @@
+import { useStaticQuery, graphql } from 'gatsby';
+
+export default function useRgd() {
+  const data = useStaticQuery(graphql`
+    {
+      file(base: { eq: "rgd.json" }) {
+        childrenDiscussionsJson {
+          type
+          owner
+          repo
+          cname
+          issues_owner
+          issues_repo
+          website {
+            title
+            description
+            home
+            label_category
+            label_level
+            built_date
+          }
+        }
+      }
+    }
+  `);
+  let _data = data?.file?.childrenDiscussionsJson?.[0] || {};
+  console.log('«27» /src/hooks/useRgd.ts ~> ', _data);
+
+  if (!_data.owner) _data.owner = 'lencx';
+  if (!_data.repo) _data.owner = 'gg';
+  return _data;
+}

@@ -5,11 +5,9 @@ import NavIcon from './NavIcon';
 import NavScreen from './NavScreen';
 import './index.scss';
 
-interface NavProps {
-  siteMetadata: any;
-}
+interface NavProps {}
 
-const Nav: FC<NavProps> = ({ siteMetadata }) => {
+const Nav: FC<NavProps> = () => {
   const [isToggle, setToggle] = useState(false);
 
   const handleToggle = () => {
@@ -33,7 +31,7 @@ const Nav: FC<NavProps> = ({ siteMetadata }) => {
   return (
     <div className="gg-nav">
       <NavIcon isActive={isToggle} onClick={handleToggle} />
-      <NavScreen isHide={isToggle} siteMetadata={siteMetadata} />
+      <NavScreen isHide={isToggle} />
     </div>
   );
 };

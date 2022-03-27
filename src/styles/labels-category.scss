@@ -1,0 +1,77 @@
+.labels-category-page {
+  .gg-label-category-head {
+    position: sticky;
+    top: 56px;
+    margin-bottom: 20px;
+  }
+
+  .category-group {
+    display: flex;
+    width: 100%;
+
+    .label-category {
+      height: 36px;
+      padding: 0 10px;
+      line-height: 36px;
+      display: inline-block;
+      cursor: pointer;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 0 1px 1px rgba(80, 80, 80, 0.5);
+
+      &.active {
+        color: #000;
+      }
+    }
+  }
+
+  .level-group {
+    .label-level {
+      display: inline-block;
+      height: 24px;
+      font-size: 16px;
+      background-color: #000;
+      color: #fff;
+      padding: 0 10px;
+      font-size: 14px;
+      line-height: 24px;
+      margin-right: 1px;
+      cursor: pointer;
+      opacity: 0.5;
+
+      &.active {
+        opacity: 1;
+      }
+
+      @for $i from 1 through 5 {
+        &.level#{$i} {
+          background-color: lighten(#222, $i * 10%);
+        }
+      }
+    }
+  }
+
+  .issues-list {
+    .item {
+      background-color: var(--gg-border);
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .labels-list {
+      font-size: 12px;
+      margin-top: 4px;
+
+      .gg-label {
+        margin-right: 4px;
+        margin-bottom: 4px;
+      }
+    }
+
+    .post-info {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+  }
+}

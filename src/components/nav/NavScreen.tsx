@@ -6,21 +6,24 @@ import iconGh from '@iconify-icons/mdi/github';
 import iconRss from '@iconify-icons/mdi/rss';
 import iconCategory from '@iconify-icons/bxs/category';
 import iconTags from '@iconify-icons/mdi/tag-multiple';
+import iconArchive from '@iconify-icons/mdi/archive';
 
+import useRepoLink from '@hooks/useRepoLink';
 import ThemeSwitch from '@comps/theme_switch';
 import { go } from '@utils/tools';
 
 interface NavScreenProps {
   isHide: boolean;
-  siteMetadata: any;
 }
 
-const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
+const NavScreen: FC<NavScreenProps> = ({ isHide }) => {
+  const { repoType, siteRepo, rssLink } = useRepoLink();
+
   return (
     <div className={clsx('nav-screen', { open: isHide })}>
       <div>
         <nav>
-          {siteMetadata.type !== 'issues' && (
+          {repoType !== 'issues' && (
             <li onClick={() => navigate(`/category`)}>
               <Icon
                 className="icon-action"
@@ -40,6 +43,17 @@ const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
             />
             Labels
           </li>
+          {repoType === 'issues' && (
+            <li onClick={() => navigate(`/archives`)}>
+              <Icon
+                className="icon-action"
+                icon={iconArchive}
+                fontSize="20"
+                color="var(--gg-icon)"
+              />
+              Archives
+            </li>
+          )}
         </nav>
         <div className="icons">
           <ThemeSwitch />
@@ -48,14 +62,14 @@ const NavScreen: FC<NavScreenProps> = ({ isHide, siteMetadata }) => {
             icon={iconRss}
             fontSize="20"
             color="var(--gg-icon)"
-            onClick={() => go(siteMetadata.rss)}
+            onClick={() => go(rssLink)}
           />
           <Icon
             className="icon-action"
             icon={iconGh}
             fontSize="20"
             color="var(--gg-icon)"
-            onClick={() => go(siteMetadata.repo)}
+            onClick={() => go(siteRepo)}
           />
         </div>
       </div>

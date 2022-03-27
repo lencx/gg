@@ -1,0 +1,15 @@
+{
+  "pathPrefix": "/",
+  "siteMetadata": {
+    "userLogo": false
+  },
+  "manifest": {
+    "name": "GG",
+    "short_name": "GG",
+    "start_url": "/",
+    "background_color": "#fafafa",
+    "theme_color": "#232629",
+    "display": "standalone",
+    "icon": "./src/static/pwa-logo.png"
+  }
+}
