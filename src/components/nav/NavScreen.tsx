@@ -17,7 +17,7 @@ interface NavScreenProps {
 }
 
 const NavScreen: FC<NavScreenProps> = ({ isHide }) => {
-  const { repoType, siteRepo, rssLink } = useRepoLink();
+  const { repoType, dataRepo, rssLink } = useRepoLink();
 
   return (
     <div className={clsx('nav-screen', { open: isHide })}>
@@ -69,7 +69,7 @@ const NavScreen: FC<NavScreenProps> = ({ isHide }) => {
             icon={iconGh}
             fontSize="20"
             color="var(--gg-icon)"
-            onClick={() => go(siteRepo)}
+            onClick={() => go(dataRepo)}
           />
         </div>
       </div>
