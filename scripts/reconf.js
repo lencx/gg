@@ -101,6 +101,11 @@ function cnameUpdate() {
 function pkgUpdate() {
   pkg.name = rgdConf.repo;
   pkg.description = rgdConf.description || rgdConf.website?.description;
+  if (rgdConf.type === 'issues') {
+    pkg.scripts.posts = `yarn post:base --owner=${rgdConf.owner} --repo=${rgdConf.repo} --issues-owner=${rgdConf['issues-owner']} --issues-repo=${rgdConf['issues-repo']} --type=${rgdConf.type} --issues-state=${rgdConf['issues-state']}`;
+  } else {
+    pkg.scripts.posts = `yarn post:base --owner=${rgdConf.owner} --repo=${rgdConf.repo}`;
+  }
 
   fs.writeFile('package.json', JSON.stringify(pkg, null, 2), (err) => {
     if (err) return;

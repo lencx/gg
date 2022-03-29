@@ -39,3 +39,29 @@ const emojiMap: Record<string, string> = {
 }
 
 export default (emoji: string): string => emojiMap[emoji.slice(1, -1)] || '';
+
+
+// -----------------------------------------
+// THUMBS_UP
+// Represents the :+1: emoji.
+
+// THUMBS_DOWN
+// Represents the :-1: emoji.
+
+// LAUGH
+// Represents the :laugh: emoji.
+
+// HOORAY
+// Represents the :hooray: emoji.
+
+// CONFUSED
+// Represents the :confused: emoji.
+
+// HEART
+// Represents the :heart: emoji.
+
+// ROCKET
+// Represents the :rocket: emoji.
+
+// EYES
+// Represents the :eyes: emoji.

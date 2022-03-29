@@ -7,6 +7,7 @@
   "keywords": [
     "github",
     "discussions",
+    "issues",
     "gatsby",
     "pwa",
     "website",
@@ -19,7 +20,9 @@
     "clean": "gatsby clean",
     "rgd": "rgd",
     "deploy": "node ./scripts/deploy",
-    "posts": "rgd --mode=json,rss --jsonfmt=true --outdir=discussions",
+    "posts:base": "rgd --mode=json,rss --jsonfmt=true --outdir=discussions",
+    "posts:ci": "yarn posts:base",
+    "posts": "yarn posts:base",
     "reconf": "node ./scripts/reconf",
     "reset": "node ./scripts/reset",
     "copy": "node ./scripts/copy"
@@ -50,6 +53,6 @@
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^3.1.0",
-    "rgd": "^2.0.2"
+    "rgd": "^2.0.4"
   }
 }

@@ -8341,10 +8341,10 @@ rework@1.0.1:
     convert-source-map "^0.3.3"
     css "^2.0.0"
 
-rgd@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/rgd/-/rgd-2.0.2.tgz#5a7bb391a809acbe9934937bd916130e5f2f6c41"
-  integrity sha512-ebvcSx65hJEjjs/5E53Uh5T9FQCiIUljP/x7hYQOKIe5DAUupZQDqhFvzOIjZd+S/qFnXtvV+MH7Ds3SnOLx3g==
+rgd@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.npmmirror.com/rgd/-/rgd-2.0.4.tgz#4d95736141bf2a54d8ea7e6687d856767621ce68"
+  integrity sha512-Pz6nxEIhDTT5eQ8LXcUxBeP1o1Ma9iQNEjj+raXMH4G1Wktb5Ryjv1AlQ5qR63TrLQw6HgGQJuwee4L8heL6iA==
   dependencies:
     "@octokit/graphql" "^4.6.4"
     chalk "^4.1.1"

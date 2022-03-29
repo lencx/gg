@@ -16,7 +16,8 @@ export const fmtLabelsCategory = (list: any[], category: string[], level: string
   let re = reLevel(level);
   let obj: any = {};
   list.forEach((i: any) => {
-    const key: any = intersection(category, i.labels.map((j: any) => j.name));
+    const key: any = intersection(category, i.labels.map((j: any) => j.name))?.[0];
+
     if (key) {
       if (!obj[key]) obj[key] = { level: [], list: [] };
 
