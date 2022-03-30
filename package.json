@@ -1,5 +1,5 @@
 {
-  "name": "gg",
+  "name": "gg-template",
   "version": "0.1.0",
   "private": true,
   "description": "A gatsby website builder based on github discussions",
@@ -11,7 +11,8 @@
     "gatsby",
     "pwa",
     "website",
-    "docs"
+    "docs",
+    "template"
   ],
   "scripts": {
     "dev": "gatsby develop",
