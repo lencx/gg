@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
   schedule:
     - cron: '30 0-23 * * *'
 
@@ -17,7 +18,7 @@ jobs:
         with:
           node-version: '14'
       - run: yarn
-      - run: yarn posts:ci --token=${{ secrets.GG_TOKEN }} --owner=${{ secrets.GG_USER }} --repo=${{ secrets.GG_REPO }} --issues-owner=${{ secrets.GG_ISSUES_USER }} --issues-repo=${{ secrets.GG_ISSUES_REPO }} --type=${{ secrets.GG_TYPE }} --issues-state=${{ secrets.GG_ISSUES_STATE }}
+      - run: yarn posts:ci --token=${{ secrets.GG_TOKEN }} --owner=${{ github.repository_owner }} --repo=${{ github.repository }} --issues-owner=${{ secrets.GG_ISSUES_USER }} --issues-repo=${{ secrets.GG_ISSUES_REPO }} --type=${{ secrets.GG_TYPE }} --issues-state=${{ secrets.GG_ISSUES_STATE }}
       - run: yarn reconf
       - run: yarn build
       - run: yarn copy
