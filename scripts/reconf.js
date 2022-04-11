@@ -24,10 +24,21 @@ cname: <CNAME>
 
 ### website ###
 website:
-  # size: 40x40
-  logo: <log_url>
+  # size: 240x240 png
+  logo: <logo_url>
   title: <site_title>
   description: <site_description>
+
+### PWA Manifest ###
+manifest:
+  name: <name>
+  short_name: <short_name>
+  start_url: /
+  background_color: <background_color>
+  theme_color: <theme_color>
+  display: standalone
+  # size: 240x240 png
+  icon: <icon_url>
 \`\`\`
 `);
   process.exit();
@@ -106,7 +117,6 @@ function pkgUpdate() {
   } else {
     pkg.scripts.posts = `yarn post:base --owner=${rgdConf.owner} --repo=${rgdConf.repo}`;
   }
-
   fs.writeFile('package.json', JSON.stringify(pkg, null, 2), (err) => {
     if (err) return;
     console.log(chalk.gray`[init]`, chalk.yellow`package.json`);
