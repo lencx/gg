@@ -6,7 +6,10 @@ on:
       - main
   # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
   schedule:
-    - cron: '30 0-23 * * *'
+    - cron: '0 20 * * *'
+  # https://docs.github.com/en/enterprise-cloud@latest/actions/using-workflows/events-that-trigger-workflows#discussion
+  discussion:
+    types: [created, edited, answered, deleted, transferred]
 
 jobs:
   deploy:
