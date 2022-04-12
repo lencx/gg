@@ -14,13 +14,19 @@ interface IssuesNumProps {
 
 const IssuesNum: FC<IssuesNumProps> = (props) => {
   const rgdData = useRgd();
-  const isIssue = rgdData.type === 'issues';
+
   let _link;
-  if (isIssue) {
-    _link = `https://github.com/${rgdData.issues_owner}/${rgdData.issues_repo}/issues/${props.number}`;
-  } else {
-    _link = `https://github.com/${rgdData.owner}/${rgdData.repo}/discussions/${props.number}`;
+  switch (rgdData.type) {
+    case 'issues':
+      _link = `https://github.com/${rgdData.issues_owner}/${rgdData.issues_repo}/issues/${props.number}`;
+      break;
+    case 'discussions2':
+      _link = `https://github.com/${rgdData.dis_owner}/${rgdData.dis_repo}/discussions/${props.number}`;
+      break;
+    default:
+      _link = `https://github.com/${rgdData.owner}/${rgdData.repo}/discussions/${props.number}`;
   }
+
   return (
     <a
       className={clsx('number issues-num', props.className)}

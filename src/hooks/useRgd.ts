@@ -11,6 +11,8 @@ export default function useRgd() {
           cname
           issues_owner
           issues_repo
+          dis_owner
+          dis_repo
           website {
             title
             description

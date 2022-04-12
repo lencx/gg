@@ -254,6 +254,8 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
           'repo',
           'issues_owner',
           'issues_repo',
+          'dis_owner',
+          'dis_repo',
           'cname',
           'type',
         ]),
