@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-tsx",
+    "path": "/category/docs",
+    "result": {"data":{"allDiscussionsJson":{"nodes":[{"node":{"title":"快速开始","number":5}},{"node":{"title":"Awesome GG","number":6}},{"node":{"title":"关于 GG","number":4}}]}},"pageContext":{"category":{"name":"Docs","emoji":":book:","description":"Gatsby GitHub Docs","isAnswerable":false},"name":"Docs","nlen":1}},
+    "staticQueryHashes": ["151096407","2861350382"]}
