@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-tsx",
+    "path": "/category/try",
+    "result": {"data":{"allDiscussionsJson":{"nodes":[{"node":{"title":"test","number":3}}]}},"pageContext":{"category":{"name":"Try","emoji":":game_die:","description":"Try it out","isAnswerable":false},"name":"Try","nlen":1}},
+    "staticQueryHashes": ["151096407","2861350382"]}
