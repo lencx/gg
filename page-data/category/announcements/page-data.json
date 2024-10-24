@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-tsx",
+    "path": "/category/announcements",
+    "result": {"data":{"allDiscussionsJson":{"nodes":[{"node":{"title":"Welcome to GG Discussions!","number":1}}]}},"pageContext":{"category":{"name":"Announcements","emoji":":mega:","description":"Updates from maintainers","isAnswerable":false},"name":"Announcements","nlen":1}},
+    "staticQueryHashes": ["151096407","2861350382"]}

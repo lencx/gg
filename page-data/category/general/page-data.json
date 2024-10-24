@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-tsx",
+    "path": "/category/general",
+    "result": {"data":{"allDiscussionsJson":{"nodes":[{"node":{"title":"rgd.yml","number":2}}]}},"pageContext":{"category":{"name":"General","emoji":":speech_balloon:","description":"Chat about anything and everything here","isAnswerable":false},"name":"General","nlen":1}},
+    "staticQueryHashes": ["151096407","2861350382"]}

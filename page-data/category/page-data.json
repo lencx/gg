@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-nav-category-tsx",
+    "path": "/category",
+    "result": {"pageContext":{"categoryList":[{"name":"Docs","emoji":":book:","description":"Gatsby GitHub Docs","isAnswerable":false},{"name":"Q&A","emoji":":pray:","description":"Ask the community for help","isAnswerable":true},{"name":"General","emoji":":speech_balloon:","description":"Chat about anything and everything here","isAnswerable":false},{"name":"Try","emoji":":game_die:","description":"Try it out","isAnswerable":false},{"name":"Announcements","emoji":":mega:","description":"Updates from maintainers","isAnswerable":false}]}},
+    "staticQueryHashes": ["151096407","2861350382"]}

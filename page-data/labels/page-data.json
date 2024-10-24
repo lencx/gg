@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-nav-labels-tsx",
+    "path": "/labels",
+    "result": {"pageContext":{"labelsList":[{"id":"LA_kwDOHCtAkc7rnK-7","name":"documentation","color":"0075ca","description":"Improvements or additions to documentation"},{"id":"LA_kwDOHCtAkc7rnK--","name":"help","color":"008672","description":"Extra attention is needed"},{"id":"LA_kwDOHCtAkc8AAAABcImdlQ","name":"config","color":"006B75","description":""}]}},
+    "staticQueryHashes": ["151096407","2861350382"]}
