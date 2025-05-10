@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-labels-tsx",
+    "path": "/labels/help",
+    "result": {"data":{"allDiscussionsJson":{"nodes":[{"node":{"title":"How to deploy the discuss in a web site?","number":7}}]}},"pageContext":{"labels":{"id":"LA_kwDOHCtAkc7rnK--","name":"help","color":"008672","description":"Extra attention is needed"},"name":"help","nlen":1}},
+    "staticQueryHashes": ["151096407","2861350382"]}

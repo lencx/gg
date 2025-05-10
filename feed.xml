@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<channel>
+  <title>RSS</title>
+  <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+  <link>/</link>
+  <description>GitHub Discussions</description>
+  <item>
+  <title><![CDATA[快速开始]]></title>
+  <link>https://github.com/lencx/gg/discussions/5</link>
+  <guid isPermaLink="false">https://github.com/lencx/gg/discussions/5</guid>
+  <pubDate>2023-11-08</pubDate>
+  <description><![CDATA[<h2 dir="auto">步骤</h2>
+<h3 dir="auto">Step1：fork 项目</h3>
+<p dir="auto"><a href="https://github.com/lencx/gg">点击项目</a> 右上角的 Fork 按钮，fork 后，可以对仓库进行重命名，修改成自己喜欢的名称。</p>
+<p dir="auto">重命名（可选操作）:</p>
+<ol dir="auto">
+<li>访问 <code class="notranslate">https://github.com/&lt;owner&gt;/&lt;repo&gt;/settings</code></li>
+<li><code class="notranslate">General</code> -&gt; <code class="notranslate">Repository name</code> -&gt; <code class="notranslate">Rename</code></li>
+</ol>
+<p dir="auto"><strong><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> 注意：强烈推荐使用 <code class="notranslate">fork</code> 方式，不要对仓库 <code class="notranslate">main</code> 分支代码进行改动，这样可以和上游仓库代码始终保持一致，在升级时，可以快速同步，降低个人的维护成本。</strong></p>
+<h3 dir="auto">Step2：开启 Discussions</h3>
+<p dir="auto"><code class="notranslate">Repo -&gt; Settings -&gt; General -&gt; Features -&gt; Discussions</code></p>
+<h3 dir="auto">Step3：创建配置</h3>
+<p dir="auto">在 Discussions 中新增一个标题为 <code class="notranslate">rgd.yml</code> 的 issues，并在评论框中输入以下代码：</p>
+<div class="highlight highlight-text-md notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="```yml
+### 必须配置
+# github 用户名，支持个人或组织
+owner: lencx
+# github 仓库名称
+repo: gg
+
+### 可选配置，如果 type 为 `issues` 类型，才需要以下配置
+# type: `issues` | `discussions` | `discussions2`, default is `discussions`
+# discussions：表示需要写 discussions 的仓库与 fork 此项目的仓库为同一个
+# discussions2：表示需要写 discussions 的仓库与 fork 此项目的仓库彼此独立
+type: issues
+issues-owner: &lt;github_owner&gt;
+issues-repo: &lt;github_repo&gt;
+# state: `open` or `closed`, default is `all`
+issues-state: closed
+
+### 可选配置，如果 type 为 `discussions2` 类型，才需要以下配置
+# type: `issues` | `discussions` | `discussions2`, default is `discussions`
+type: discussions2
+# 写 discussions 的用户名及仓库名
+dis-owner: &lt;github_owner&gt;
+dis-repo: &lt;github_repo&gt;
+
+### 域名配置
+# 个人域名，如果没有则不需要设置
+# 默认使用 github 二级域名，即 https://&lt;owner&gt;.github.io/&lt;repo&gt;
+cname: gg.nofwl.com
+
+### website 配置
+website:
+  # 1. 格式为 png 的 240x240 正方形图片
+  # 2. 在线图片 URL 地址，不设置则使用默认 logo
+  logo: https://user-images.githubusercontent.com/16164244/162659556-64dd7da8-321f-4525-bbbf-975f02b4800f.png
+  # 网站标题
+  title: GG
+  # 网站描述
+  description: A gatsby website builder based on github discussions
+
+### PWA Manifest 配置
+# https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest
+manifest:
+  name: GG
+  short_name: GG
+  start_url: /
+  background_color: '#fafafa'
+  theme_color: '#232629'
+  display: standalone
+  # 1. 格式为 png 的 240x240 正方形图片
+  # 2. 在线图片 URL 地址，不设置则使用默认 logo
+  icon: https://user-images.githubusercontent.com/16164244/162659556-64dd7da8-321f-4525-bbbf-975f02b4800f.png
+```"><pre class="notranslate"><span class="pl-s">```</span><span class="pl-en">yml</span>
+<span class="pl-c"><span class="pl-c">#</span>## 必须配置</span>
+<span class="pl-c"><span class="pl-c">#</span> github 用户名，支持个人或组织</span>
+<span class="pl-ent">owner</span>: <span class="pl-s">lencx</span>
+<span class="pl-c"><span class="pl-c">#</span> github 仓库名称</span>
+<span class="pl-ent">repo</span>: <span class="pl-s">gg</span>
+
+<span class="pl-c"><span class="pl-c">#</span>## 可选配置，如果 type 为 `issues` 类型，才需要以下配置</span>
+<span class="pl-c"><span class="pl-c">#</span> type: `issues` | `discussions` | `discussions2`, default is `discussions`</span>
+<span class="pl-c"><span class="pl-c">#</span> discussions：表示需要写 discussions 的仓库与 fork 此项目的仓库为同一个</span>
+<span class="pl-c"><span class="pl-c">#</span> discussions2：表示需要写 discussions 的仓库与 fork 此项目的仓库彼此独立</span>
+<span class="pl-ent">type</span>: <span class="pl-s">issues</span>
+<span class="pl-ent">issues-owner</span>: <span class="pl-s">&lt;github_owner&gt;</span>
+<span class="pl-ent">issues-repo</span>: <span class="pl-s">&lt;github_repo&gt;</span>
+<span class="pl-c"><span class="pl-c">#</span> state: `open` or `closed`, default is `all`</span>
+<span class="pl-ent">issues-state</span>: <span class="pl-s">closed</span>
+
+<span class="pl-c"><span class="pl-c">#</span>## 可选配置，如果 type 为 `discussions2` 类型，才需要以下配置</span>
+<span class="pl-c"><span class="pl-c">#</span> type: `issues` | `discussions` | `discussions2`, default is `discussions`</span>
+<span class="pl-ent">type</span>: <span class="pl-s">discussions2</span>
+<span class="pl-c"><span class="pl-c">#</span> 写 discussions 的用户名及仓库名</span>
+<span class="pl-ent">dis-owner</span>: <span class="pl-s">&lt;github_owner&gt;</span>
+<span class="pl-ent">dis-repo</span>: <span class="pl-s">&lt;github_repo&gt;</span>
+
+<span class="pl-c"><span class="pl-c">#</span>## 域名配置</span>
+<span class="pl-c"><span class="pl-c">#</span> 个人域名，如果没有则不需要设置</span>
+<span class="pl-c"><span class="pl-c">#</span> 默认使用 github 二级域名，即 https://&lt;owner&gt;.github.io/&lt;repo&gt;</span>
+<span class="pl-ent">cname</span>: <span class="pl-s">gg.nofwl.com</span>
+
+<span class="pl-c"><span class="pl-c">#</span>## website 配置</span>
+<span class="pl-ent">website</span>:
+  <span class="pl-c"><span class="pl-c">#</span> 1. 格式为 png 的 240x240 正方形图片</span>
+  <span class="pl-c"><span class="pl-c">#</span> 2. 在线图片 URL 地址，不设置则使用默认 logo</span>
+  <span class="pl-ent">logo</span>: <span class="pl-s">https://user-images.githubusercontent.com/16164244/162659556-64dd7da8-321f-4525-bbbf-975f02b4800f.png</span>
+  <span class="pl-c"><span class="pl-c">#</span> 网站标题</span>
+  <span class="pl-ent">title</span>: <span class="pl-s">GG</span>
+  <span class="pl-c"><span class="pl-c">#</span> 网站描述</span>
+  <span class="pl-ent">description</span>: <span class="pl-s">A gatsby website builder based on github discussions</span>
+
+<span class="pl-c"><span class="pl-c">#</span>## PWA Manifest 配置</span>
+<span class="pl-c"><span class="pl-c">#</span> https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest</span>
+<span class="pl-ent">manifest</span>:
+  <span class="pl-ent">name</span>: <span class="pl-s">GG</span>
+  <span class="pl-ent">short_name</span>: <span class="pl-s">GG</span>
+  <span class="pl-ent">start_url</span>: <span class="pl-s">/</span>
+  <span class="pl-ent">background_color</span>: <span class="pl-s"><span class="pl-pds">'</span>#fafafa<span class="pl-pds">'</span></span>
+  <span class="pl-ent">theme_color</span>: <span class="pl-s"><span class="pl-pds">'</span>#232629<span class="pl-pds">'</span></span>
+  <span class="pl-ent">display</span>: <span class="pl-s">standalone</span>
+  <span class="pl-c"><span class="pl-c">#</span> 1. 格式为 png 的 240x240 正方形图片</span>
+  <span class="pl-c"><span class="pl-c">#</span> 2. 在线图片 URL 地址，不设置则使用默认 logo</span>
+  <span class="pl-ent">icon</span>: <span class="pl-s">https://user-images.githubusercontent.com/16164244/162659556-64dd7da8-321f-4525-bbbf-975f02b4800f.png</span>
+<span class="pl-s"><span class="pl-pds">`</span><span class="pl-pds">`</span><span class="pl-pds">`</span></span></pre></div>
+<p dir="auto">配置参考：</p>
+<ul dir="auto">
+<li><a href="https://github.com/fe-cool/hunter/discussions/2">issues 类型</a></li>
+<li><a href="https://github.com/rwasm/rwasm.github.io/discussions/2">discussions 类型</a></li>
+<li><a href="https://github.com/lencx/gg/discussions/2">自定义域名</a></li>
+</ul>
+<h3 dir="auto">Step4：生成 Token</h3>
+<p dir="auto"><a href="https://github.com/settings/tokens">生成 Token</a></p>
+<p dir="auto">New personal access token</p>
+<ol dir="auto">
+<li><code class="notranslate">Note</code> - 备注随便输入，主要做标识</li>
+<li><code class="notranslate">Expiration：No expiration</code> - 过期时间看需要，这里选择不过期</li>
+<li><code class="notranslate">Select scopes: workflow</code> - 只需要勾选 <code class="notranslate">workflow</code></li>
+<li>点击 <code class="notranslate">Generate token</code> 按钮，然后复制生成好的 <code class="notranslate">Token</code></li>
+</ol>
+<h3 dir="auto">Step5：设置 Secrets</h3>
+<p dir="auto"><code class="notranslate">Repo -&gt; Settings -&gt; Secrets -&gt; Actions -&gt; New repository secret</code></p>
+
+<p dir="auto">当 <code class="notranslate">GG_TYPE</code> 为 <code class="notranslate">issues</code> 时，才需要下面的变量配置：</p>
+<ol dir="auto">
+<li>GG_TYPE
+<ul dir="auto">
+<li>Name: <code class="notranslate">GG_TYPE</code></li>
+<li>Value: <code class="notranslate">issues</code></li>
+</ul>
+</li>
+<li>GG_ISSUES_OWNER：<code class="notranslate">GG_TYPE</code> 为 <code class="notranslate">issues</code> 时，此字段必须
+<ul dir="auto">
+<li>Name: <code class="notranslate">GG_ISSUES_OWNER</code></li>
+<li>Value: <code class="notranslate">&lt;github_owner&gt;</code></li>
+</ul>
+</li>
+<li>GG_ISSUES_USER：<code class="notranslate">GG_TYPE</code> 为 <code class="notranslate">issues</code> 时，此字段必须
+<ul dir="auto">
+<li>Name: <code class="notranslate">GG_ISSUES_REPO</code></li>
+<li>Value: <code class="notranslate">&lt;github_repo&gt;</code></li>
+</ul>
+</li>
+<li>GG_ISSUES_STATE：可选，如果未设置则包含 <code class="notranslate">OPEN</code> 和 <code class="notranslate">CLOSED</code> 的 issues
+<ul dir="auto">
+<li>Name: <code class="notranslate">GG_ISSUES_STATE</code></li>
+<li>Value: <code class="notranslate">CLOSED</code></li>
+</ul>
+</li>
+</ol>
+<p dir="auto">当 <code class="notranslate">GG_TYPE</code> 为 <code class="notranslate">discussions2</code> （部署网站的仓库与 discussions 数据不在一个仓库）时，才需要下面的变量配置：</p>
+<ol dir="auto">
+<li>GG_TYPE
+<ul dir="auto">
+<li>Name: <code class="notranslate">GG_TYPE</code></li>
+<li>Value: <code class="notranslate">discussions2</code></li>
+</ul>
+</li>
+<li>GG_DIS_OWNER：<code class="notranslate">GG_TYPE</code> 为 <code class="notranslate">discussions2</code> 时，此字段必须
+<ul dir="auto">
+<li>Name: <code class="notranslate">GG_DIS_OWNER</code></li>
+<li>Value: <code class="notranslate">&lt;github_owner&gt;</code></li>
+</ul>
+</li>
+<li>GG_DIS_REPO：<code class="notranslate">GG_TYPE</code> 为 <code class="notranslate">discussions2</code> 时，此字段必须
+<ul dir="auto">
+<li>Name: <code class="notranslate">GG_DIS_REPO</code></li>
+<li>Value: <code class="notranslate">&lt;github_repo&gt;</code></li>
+</ul>
+</li>
+</ol>
+<h2 dir="auto">自定义域名</h2>
+<p dir="auto">如果没有域名则不需要设置，默认使用 <code class="notranslate">github</code> 二级域名，即 <code class="notranslate">https://&lt;owner&gt;.github.io/&lt;repo&gt;</code>。</p>
+<p dir="auto">自定义域名以阿里云为例：<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/16164244/162999068-e1a7db79-6dfd-4b63-9a9f-3145d7151c37.jpg"><img width="500" alt="CNAME" src="https://user-images.githubusercontent.com/16164244/162999068-e1a7db79-6dfd-4b63-9a9f-3145d7151c37.jpg" style="max-width: 100%;"></a></p>
+<h2 dir="auto">构建</h2>
+<ul dir="auto">
+<li>提交代码会触发构建（🙅🏻‍♂️不推荐，会和上游仓库产生冲突，无法拉取最新代码）</li>
+<li>每隔一小时会自动构建一次（💁🏻‍♂️ 默认，首次创建仓库需要先启用 workflow）</li>
+<li>手动触发构建（🙋🏻‍♂️ 想要部署到网站预览，可以点击 <code class="notranslate">Re-run all jobs</code> 按钮来部署）</li>
+</ul>
+<p dir="auto">在 Fork 项目后，点击 <code class="notranslate">Actions</code> Tab 项，在 <code class="notranslate">All workflows</code> 中选择 <code class="notranslate">github pages</code>，<em>点击 <code class="notranslate">Enable workflow</code></em>，每隔一小时会自动触发一次构建。当自动构建过一次之后，会在 <code class="notranslate">github pages</code> 下产生记录，点击最新一条记录，会看到 <code class="notranslate">Re-run all jobs</code> 按钮，点击它就可以手动执行构建。</p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/16164244/159691189-ea7c88ea-c0a7-49ba-8128-3da2648a8d1e.png"><img width="680" alt="enable workflow" src="https://user-images.githubusercontent.com/16164244/159691189-ea7c88ea-c0a7-49ba-8128-3da2648a8d1e.png" style="max-width: 100%;"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/16164244/159640201-9a8b6229-861e-4664-8ff8-0b8438c19cf8.png"><img width="680" alt="workflow" src="https://user-images.githubusercontent.com/16164244/159640201-9a8b6229-861e-4664-8ff8-0b8438c19cf8.png" style="max-width: 100%;"></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/16164244/159640200-19d25bad-0b14-4a69-a547-e9584125074c.png"><img width="680" alt="workflow" src="https://user-images.githubusercontent.com/16164244/159640200-19d25bad-0b14-4a69-a547-e9584125074c.png" style="max-width: 100%;"></a></p>]]></description>
+</item>
+<item>
+  <title><![CDATA[How to deploy the discuss in a web site?]]></title>
+  <link>https://github.com/lencx/gg/discussions/7</link>
+  <guid isPermaLink="false">https://github.com/lencx/gg/discussions/7</guid>
+  <pubDate>2023-02-18</pubDate>
+  <description><![CDATA[<p dir="auto">How to deploy the discuss in a web site?<br>
+Thank you!</p>]]></description>
+</item>
+<item>
+  <title><![CDATA[Awesome GG]]></title>
+  <link>https://github.com/lencx/gg/discussions/6</link>
+  <guid isPermaLink="false">https://github.com/lencx/gg/discussions/6</guid>
+  <pubDate>2022-06-14</pubDate>
+  <description><![CDATA[<blockquote>
+<p dir="auto">Who is using</p>
+</blockquote>
+<ul dir="auto">
+<li><a href="https://rwasm.github.io/" rel="nofollow">rwasm</a> - <code class="notranslate">rsw = rs(rust) → w(wasm)</code></li>
+<li><a href="https://fe-cool.github.io/hunter/" rel="nofollow">fe-hunter</a> - 🥷 前端赏金猎人（收集前端高质量问题 + 前端高质量答案）</li>
+<li><a href="https://os2edu.github.io/discussions" rel="nofollow">os2edu</a> - os2edu github discussions</li>
+</ul>]]></description>
+</item>
+<item>
+  <title><![CDATA[rgd.yml]]></title>
+  <link>https://github.com/lencx/gg/discussions/2</link>
+  <guid isPermaLink="false">https://github.com/lencx/gg/discussions/2</guid>
+  <pubDate>2022-09-22</pubDate>
+  <description><![CDATA[<div class="highlight highlight-source-yaml notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="### repo ###
+owner: lencx
+repo: gg
+
+# domain name
+cname: gg.nofwl.com
+
+### website ###
+website:
+  # size: 240x240
+  # logo: https://avatars.githubusercontent.com/u/16164244?v=4
+  title: Gatsby GitHub Template
+  description: A gatsby website builder based on github discussions
+
+### PWA Manifest ###
+manifest:
+  name: GG
+  short_name: GG
+  start_url: /
+  background_color: &quot;#fafafa&quot;
+  theme_color: &quot;#232629&quot;
+  display: standalone
+  # icon: https://avatars.githubusercontent.com/u/16164244?v=4"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span>## repo ###</span>
+<span class="pl-ent">owner</span>: <span class="pl-s">lencx</span>
+<span class="pl-ent">repo</span>: <span class="pl-s">gg</span>
+
+<span class="pl-c"><span class="pl-c">#</span> domain name</span>
+<span class="pl-ent">cname</span>: <span class="pl-s">gg.nofwl.com</span>
+
+<span class="pl-c"><span class="pl-c">#</span>## website ###</span>
+<span class="pl-ent">website</span>:
+  <span class="pl-c"><span class="pl-c">#</span> size: 240x240</span>
+  <span class="pl-c"><span class="pl-c">#</span> logo: https://avatars.githubusercontent.com/u/16164244?v=4</span>
+  <span class="pl-ent">title</span>: <span class="pl-s">Gatsby GitHub Template</span>
+  <span class="pl-ent">description</span>: <span class="pl-s">A gatsby website builder based on github discussions</span>
+
+<span class="pl-c"><span class="pl-c">#</span>## PWA Manifest ###</span>
+<span class="pl-ent">manifest</span>:
+  <span class="pl-ent">name</span>: <span class="pl-s">GG</span>
+  <span class="pl-ent">short_name</span>: <span class="pl-s">GG</span>
+  <span class="pl-ent">start_url</span>: <span class="pl-s">/</span>
+  <span class="pl-ent">background_color</span>: <span class="pl-s"><span class="pl-pds">"</span>#fafafa<span class="pl-pds">"</span></span>
+  <span class="pl-ent">theme_color</span>: <span class="pl-s"><span class="pl-pds">"</span>#232629<span class="pl-pds">"</span></span>
+  <span class="pl-ent">display</span>: <span class="pl-s">standalone</span>
+  <span class="pl-c"><span class="pl-c">#</span> icon: https://avatars.githubusercontent.com/u/16164244?v=4</span></pre></div>]]></description>
+</item>
+<item>
+  <title><![CDATA[关于 GG]]></title>
+  <link>https://github.com/lencx/gg/discussions/4</link>
+  <guid isPermaLink="false">https://github.com/lencx/gg/discussions/4</guid>
+  <pubDate>2022-06-14</pubDate>
+  <description><![CDATA[<blockquote>
+<p dir="auto"><strong>GG: Gatsby + GitHub</strong></p>
+</blockquote>
+<h2 dir="auto">背景</h2>
+<p dir="auto">我想要一个可以实时编辑文章的在线 IDE，支持分类，标签，多编程语言，评论互动及问答模式。发文也不需要受到平台的审核及约束，综合考虑下来决定基于 GitHub 来打造一个社区。同样的事情，我希望可以只用做一次，然后可以无限复用这种能力。所以我选择将它开源，并且完全基于 GitHub 所提供的能力来实现。</p>
+<h2 dir="auto">技术栈</h2>
+<ul dir="auto">
+<li><a href="https://www.gatsbyjs.com/" rel="nofollow">Gatsby.js</a> - 一个基于 React 的免费、开源框架，用于帮助开发者构建运行速度极快的网站和应用程序</li>
+<li><a href="https://github.com/lencx/rgd">lencx/rgd</a> - 一个命令行工具，可以将 GitHub Discussions API 生成 RSS 和 JSON 文件</li>
+<li><a href="https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions">GitHub Discussions API</a> - 通过接口查询数据</li>
+<li><a href="https://pages.github.com/">GitHub Pages</a> - 网站部署</li>
+<li><a href="https://docs.github.com/en/actions/using-workflows/triggering-a-workflow">GitHub Actions workflow</a> - 定时任务，自动构建，及部署等</li>
+<li><a href="https://web.dev/progressive-web-apps/" rel="nofollow">PWA</a> - 渐进式 Web 应用程序</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" rel="nofollow">响应式</a> - 同时支持桌面端，及移动端</li>
+</ul>
+<h2 dir="auto">工作原理</h2>
+<p dir="auto"><code class="notranslate">lencx/rgd</code> 从 <code class="notranslate">Discussions API</code> 中获取数据生成的 <code class="notranslate">JSON</code> 文件，会通过 <code class="notranslate">Gatsby.js</code> 的 <code class="notranslate">gatsby-transformer-json</code> 插件解析生成 <code class="notranslate">GraphQL</code> 数据作为网站数据源，用来渲染页面。<code class="notranslate">GitHub Actions</code> 每天会定时跑任务，从 <code class="notranslate">GitHub Discussions</code> 获取最新数据变更，重新对网站进行构建，并将其推送到 <code class="notranslate">GitHub Pages</code>。</p>
+<h2 dir="auto">部署</h2>
+<p dir="auto">这个项目推荐的方式是配合 <code class="notranslate">GitHub Actions</code> 每天定时同步 Discussions 中的数据，将其构建后推送到 <code class="notranslate">GitHub Pages</code>。但是您也可以选择部署到其他平台。需要进行如下步骤：</p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" data-snippet-clipboard-copy-content="yarn deploy"><pre class="notranslate">yarn deploy</pre></div>
+<p dir="auto">将生成的 <code class="notranslate">public</code> 目录部署到其平台。</p>]]></description>
+</item>
+<item>
+  <title><![CDATA[test]]></title>
+  <link>https://github.com/lencx/gg/discussions/3</link>
+  <guid isPermaLink="false">https://github.com/lencx/gg/discussions/3</guid>
+  <pubDate>2022-09-01</pubDate>
+  <description><![CDATA[<p dir="auto">test</p>]]></description>
+</item>
+<item>
+  <title><![CDATA[Welcome to GG Discussions!]]></title>
+  <link>https://github.com/lencx/gg/discussions/1</link>
+  <guid isPermaLink="false">https://github.com/lencx/gg/discussions/1</guid>
+  <pubDate>2022-09-22</pubDate>
+  <description><![CDATA[
+<h2 dir="auto">👋 Welcome!</h2>
+<p dir="auto">We’re using Discussions as a place to connect with other members of our community. We hope that you:</p>
+<ul dir="auto">
+<li>Ask questions you’re wondering about.</li>
+<li>Share ideas.</li>
+<li>Engage with other community members.</li>
+<li>Welcome others and are open-minded. Remember that this is a community we<br>
+build together 💪.</li>
+</ul>
+<p dir="auto">To get started, comment below with an introduction of yourself and tell us about what you do with this community.</p>
+]]></description>
+</item>
+
+</channel>
+</rss>

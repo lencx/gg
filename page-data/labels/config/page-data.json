@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-labels-tsx",
+    "path": "/labels/config",
+    "result": {"data":{"allDiscussionsJson":{"nodes":[{"node":{"title":"rgd.yml","number":2}}]}},"pageContext":{"labels":{"id":"LA_kwDOHCtAkc8AAAABcImdlQ","name":"config","color":"006B75","description":""},"name":"config","nlen":1}},
+    "staticQueryHashes": ["151096407","2861350382"]}
